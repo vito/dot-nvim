@@ -13,6 +13,9 @@ imap jj <esc>
 " save on enter
 nmap <cr> :w<cr>
 
+" clear highlights on space
+nmap <space> :noh<cr>
+
 " enable line number gutter
 set number
 
