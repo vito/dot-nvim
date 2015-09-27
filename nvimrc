@@ -55,3 +55,7 @@ autocmd! BufEnter *.go setlocal shiftwidth=2 tabstop=2 softtabstop=2 noexpandtab
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#omni_patterns = {}
 let g:deoplete#omni_patterns.go = '[a-zA-Z_\.]'
+
+" don't depend on terminal colors
+colorscheme jellybeans
+let g:jellybeans_use_lowcolor_black = 0
