@@ -60,6 +60,13 @@ let g:deoplete#omni_patterns = {}
 let g:deoplete#omni_patterns.go = '[a-zA-Z_\.]'
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
-" don't depend on terminal colors
+" colors
 colorscheme jellybeans
 let g:jellybeans_use_lowcolor_black = 0
+
+
+" undo persists across sessions
+if has('persistent_undo')
+  set undofile
+  set undodir=~/.nvim/.undo
+endif

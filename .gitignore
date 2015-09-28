@@ -1,3 +1,5 @@
 .netrwhist
 spell
 .nvimrc-rplugin~
+.undo/*
+!.undo/.gitkeep
