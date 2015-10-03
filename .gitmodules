@@ -37,3 +37,6 @@
 [submodule "bundle/YouCompleteMe"]
 	path = bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe
+[submodule "bundle/vim-fish"]
+	path = bundle/vim-fish
+	url = https://github.com/dag/vim-fish
