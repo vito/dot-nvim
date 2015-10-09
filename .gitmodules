@@ -28,15 +28,15 @@
 [submodule "bundle/vim-yaml"]
 	path = bundle/vim-yaml
 	url = https://github.com/stephpy/vim-yaml
+[submodule "bundle/deoplete.nvim"]
+	path = bundle/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim
 [submodule "bundle/jellybeans.vim"]
 	path = bundle/jellybeans.vim
 	url = https://github.com/nanotech/jellybeans.vim
 [submodule "bundle/undotree"]
 	path = bundle/undotree
 	url = https://github.com/mbbill/undotree
-[submodule "bundle/YouCompleteMe"]
-	path = bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe
 [submodule "bundle/vim-fish"]
 	path = bundle/vim-fish
 	url = https://github.com/dag/vim-fish
