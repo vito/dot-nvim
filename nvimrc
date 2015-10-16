@@ -78,3 +78,8 @@ endif
 " nerdtree bindings
 nnoremap \ :NERDTreeToggle<CR>
 nnoremap \| :NERDTreeFind<CR>
+
+" source local config if any
+if !empty(glob("~/.nvimrc.local"))
+  source ~/.nvimrc.local
+end
