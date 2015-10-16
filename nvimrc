@@ -36,6 +36,7 @@ set backupdir=~/.vim-tmp,~/tmp,/var/tmp,/tmp
 " mouse support
 set mouse=a
 
+" utility for colorscheme development
 function! SyntaxItem()
   return "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
     \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
@@ -68,9 +69,12 @@ inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 colorscheme jellybeans
 let g:jellybeans_use_lowcolor_black = 0
 
-
 " undo persists across sessions
 if has('persistent_undo')
   set undofile
   set undodir=~/.nvim/.undo
 endif
+
+" nerdtree bindings
+nnoremap \ :NERDTreeToggle<CR>
+nnoremap \| :NERDTreeFind<CR>
