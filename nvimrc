@@ -83,3 +83,6 @@ nnoremap \| :NERDTreeFind<CR>
 if !empty(glob("~/.nvimrc.local"))
   source ~/.nvimrc.local
 end
+
+" ignore binary files
+set wildignore+=*.a
