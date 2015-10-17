@@ -63,7 +63,12 @@ autocmd! BufEnter *.go setlocal shiftwidth=2 tabstop=2 softtabstop=2 noexpandtab
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#omni_patterns = {}
 let g:deoplete#omni_patterns.go = '[a-zA-Z_\.]'
+
+" tab for cycling through options
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" enter closes options if present and inserts linebreak
+inoremap <expr> <CR> pumvisible() ? "\<C-y>\<CR>" : "\<CR>"
 
 " colors
 colorscheme jellybeans
