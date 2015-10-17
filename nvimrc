@@ -68,7 +68,11 @@ let g:deoplete#omni_patterns.go = '[a-zA-Z_\.]'
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " enter closes options if present and inserts linebreak
-inoremap <expr> <CR> pumvisible() ? "\<C-y>\<CR>" : "\<CR>"
+" apparently this has to be that complicated
+inoremap <silent> <CR> <C-r>=<SID>close_and_linebreak()<CR>
+function! s:close_and_linebreak()
+  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+endfunction
 
 " colors
 colorscheme jellybeans
