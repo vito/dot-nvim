@@ -105,12 +105,23 @@ let g:neomake_open_list = 2
 let g:neomake_list_height = 5
 
 " disable golint; too noisy to be useful. add govet instead.
+let g:neomake_go_gobuild_maker = {
+    \ 'exe': 'sh',
+    \ 'args': ['-c', 'go build -o ' . neomake#utils#DevNull() . ' .'],
+    \ 'errorformat':
+        \ '%W%f:%l: warning: %m,' .
+        \ '%E%f:%l:%c:%m,' .
+        \ '%E%f:%l:%m,' .
+        \ '%C%\s%\+%m,' .
+        \ '%-G#%.%#',
+    \ 'cwd': '%:p:h'
+    \ }
 let g:neomake_go_govet_maker = {
     \ 'exe': 'go',
     \ 'args': ['vet'],
     \ 'errorformat': '%f:%l: %m'
     \ }
-let g:neomake_go_enabled_makers = ['go', 'govet']
+let g:neomake_go_enabled_makers = ['gobuild', 'govet']
 
 " vim-go's extra quickfix is redundant with Neomake on save
 let g:go_fmt_fail_silently = 1
