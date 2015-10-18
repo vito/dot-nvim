@@ -8,7 +8,8 @@ set shiftwidth=2
 set softtabstop=2
 
 " escape with jj, as it should be
-imap jj <esc>
+imap jk <esc>
+imap kj <esc>
 
 " save on enter
 nmap <cr> :w<cr>
