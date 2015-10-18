@@ -111,3 +111,6 @@ let g:neomake_go_govet_maker = {
     \ 'errorformat': '%f:%l: %m'
     \ }
 let g:neomake_go_enabled_makers = ['go', 'govet']
+
+" vim-go's extra quickfix is redundant with Neomake on save
+let g:go_fmt_fail_silently = 1
