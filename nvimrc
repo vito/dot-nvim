@@ -96,3 +96,18 @@ end
 
 " ignore binary files
 set wildignore+=*.a
+
+" make on save to show build errors in quickfix
+autocmd! BufWritePost * Neomake
+
+" open list automatically but preserve cursor position
+let g:neomake_open_list = 2
+let g:neomake_list_height = 5
+
+" disable golint; too noisy to be useful. add govet instead.
+let g:neomake_go_govet_maker = {
+    \ 'exe': 'go',
+    \ 'args': ['vet'],
+    \ 'errorformat': '%f:%l: %m'
+    \ }
+let g:neomake_go_enabled_makers = ['go', 'govet']
