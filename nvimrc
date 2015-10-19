@@ -107,7 +107,7 @@ let g:neomake_list_height = 5
 " disable golint; too noisy to be useful. add govet instead.
 let g:neomake_go_gobuild_maker = {
     \ 'exe': 'sh',
-    \ 'args': ['-c', 'go build -o ' . neomake#utils#DevNull() . ' ./\$0', '%:h'],
+    \ 'args': ['-c', 'go build -o /tmp/vim-go-build ./\$0', '%:h'],
     \ 'errorformat':
         \ '%W%f:%l: warning: %m,' .
         \ '%E%f:%l:%c:%m,' .
