@@ -127,7 +127,7 @@ let g:neomake_go_gotest_maker = {
     \ }
 let g:neomake_go_gometalinter_maker = {
     \ 'exe': 'sh',
-    \ 'args': ['-c', 'gometalinter --disable=gofmt --tests --fast --sort=severity -e "should have comment" \$0 | grep \$1', '%:h', '%'],
+    \ 'args': ['-c', 'gometalinter --disable=gofmt --disable=dupl --tests --fast --sort=severity -e "should have comment" \$0 | grep \$1', '%:h', '%'],
     \ 'errorformat': '%f:%l:%c:%t%*[^:]:\ %m,%f:%l::%t%*[^:]:\ %m',
     \ }
 let g:neomake_go_enabled_makers = ['gobuild', 'gotest', 'gometalinter']
