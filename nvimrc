@@ -125,12 +125,12 @@ let g:neomake_go_gotest_maker = {
         \ '%C%\s%\+%m,' .
         \ '%-G#%.%#'
     \ }
-let g:neomake_go_govet_maker = {
-    \ 'exe': 'go',
-    \ 'args': ['vet'],
-    \ 'errorformat': '%f:%l: %m'
+let g:neomake_go_gometalinter_maker = {
+    \ 'exe': 'sh',
+    \ 'args': ['-c', 'gometalinter --fast --sort=severity -e "should have comment" \$0', '%:h'],
+    \ 'errorformat': '%f:%l:%c:%t%*[^:]:\ %m,%f:%l::%t%*[^:]:\ %m',
     \ }
-let g:neomake_go_enabled_makers = ['gobuild', 'govet', 'gotest']
+let g:neomake_go_enabled_makers = ['gobuild', 'gotest', 'gometalinter']
 
 " vim-go's extra quickfix is redundant with Neomake on save
 let g:go_fmt_fail_silently = 1
