@@ -1,13 +1,42 @@
 execute pathogen#infect()
-syntax on
+
+" NB: these may become default; see https://github.com/neovim/neovim/pull/2675
 filetype plugin indent on
+syntax enable
+
+" reveal neighbor text when nearing screen borders
+set scrolloff=1
+set sidescrolloff=5
+
+" always assume bash when executing stuff
+set shell=/bin/bash
 
 " 2 spaces for tabs
 set expandtab
 set shiftwidth=2
 set softtabstop=2
 
-" escape with jj, as it should be
+" enable line number gutter
+set number
+
+" place swap files somewhere more sane
+set directory=~/.vim-tmp,~/tmp,/var/tmp,/tmp
+set backupdir=~/.vim-tmp,~/tmp,/var/tmp,/tmp
+
+" undo persists across sessions
+if has('persistent_undo')
+  set undofile
+  set undodir=~/.nvim/.undo
+endif
+
+" ignore binary files
+set wildignore+=*.a
+
+" colors
+colorscheme jellybeans
+let g:jellybeans_use_lowcolor_black = 0
+
+" escape with smashing j and k; easier to press quickly on slow systems
 imap jk <esc>
 imap kj <esc>
 
@@ -16,9 +45,6 @@ nmap <cr> :w<cr>
 
 " clear highlights on space
 nmap <space> :noh<cr>
-
-" enable line number gutter
-set number
 
 " shorthand for window switching
 nmap <C-h> <C-w>h
@@ -30,12 +56,9 @@ nmap <C-l> <C-w>l
 nmap j gj
 nmap k gk
 
-" place swap files somewhere more sane
-set directory=~/.vim-tmp,~/tmp,/var/tmp,/tmp
-set backupdir=~/.vim-tmp,~/tmp,/var/tmp,/tmp
-
-" mouse support
-set mouse=a
+" nerdtree bindings
+nnoremap \ :NERDTreeToggle<CR>
+nnoremap \| :NERDTreeFind<CR>
 
 " utility for colorscheme development
 function! SyntaxItem()
@@ -45,20 +68,6 @@ function! SyntaxItem()
 endfunction
 
 " set statusline=%{SyntaxItem()}
-
-" disable fucking stupid yaml indenting logic
-autocmd FileType yaml setlocal indentexpr=
-
-" go setup
-let g:go_fmt_command = "goimports"
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-
-autocmd FileType go compiler go
-autocmd! BufEnter *.go setlocal shiftwidth=2 tabstop=2 softtabstop=2 noexpandtab
 
 " autocomplete config
 let g:deoplete#enable_at_startup = 1
@@ -75,27 +84,22 @@ function! s:close_and_linebreak()
   return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
 endfunction
 
-" colors
-colorscheme jellybeans
-let g:jellybeans_use_lowcolor_black = 0
+" disable fucking stupid yaml indenting logic
+autocmd FileType yaml setlocal indentexpr=
 
-" undo persists across sessions
-if has('persistent_undo')
-  set undofile
-  set undodir=~/.nvim/.undo
-endif
+" go setup
+let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 
-" nerdtree bindings
-nnoremap \ :NERDTreeToggle<CR>
-nnoremap \| :NERDTreeFind<CR>
+" vim-go's extra quickfix is redundant with Neomake on save
+let g:go_fmt_fail_silently = 1
 
-" source local config if any
-if !empty(glob("~/.nvimrc.local"))
-  source ~/.nvimrc.local
-end
-
-" ignore binary files
-set wildignore+=*.a
+autocmd FileType go compiler go
+autocmd! BufEnter *.go setlocal shiftwidth=2 tabstop=2 softtabstop=2 noexpandtab
 
 " make on save to show build errors in quickfix
 autocmd! BufWritePost * Neomake
@@ -132,5 +136,7 @@ let g:neomake_go_gometalinter_maker = {
     \ }
 let g:neomake_go_enabled_makers = ['gobuild', 'gotest', 'gometalinter']
 
-" vim-go's extra quickfix is redundant with Neomake on save
-let g:go_fmt_fail_silently = 1
+" source local config if any
+if !empty(glob("~/.nvimrc.local"))
+  source ~/.nvimrc.local
+end

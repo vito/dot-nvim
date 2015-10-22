@@ -1,6 +1,3 @@
-[submodule "bundle/vim-sensible"]
-	path = bundle/vim-sensible
-	url = https://github.com/tpope/vim-sensible
 [submodule "bundle/atomy-vim"]
 	path = bundle/atomy-vim
 	url = https://github.com/vito/atomy-vim
