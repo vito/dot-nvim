@@ -52,6 +52,9 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
+" work around sketchy <C-h> behavior; hopefully this can be removed someday
+nmap <BS> <C-w>h
+
 " sensible long line navigation
 nmap j gj
 nmap k gk
