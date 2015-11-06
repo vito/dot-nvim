@@ -4,6 +4,9 @@ execute pathogen#infect()
 filetype plugin indent on
 syntax enable
 
+" use comma as leader key
+let mapleader=","
+
 " reveal neighbor text when nearing screen borders
 set scrolloff=1
 set sidescrolloff=5
@@ -62,6 +65,9 @@ nmap k gk
 " nerdtree bindings
 nnoremap \ :NERDTreeToggle<CR>
 nnoremap \| :NERDTreeFind<CR>
+
+" undotree bindings
+nnoremap <leader>u :UndotreeToggle<CR>
 
 " utility for colorscheme development
 function! SyntaxItem()
