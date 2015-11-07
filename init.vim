@@ -107,43 +107,39 @@ let g:go_highlight_build_constraints = 1
 " vim-go's extra quickfix is redundant with Neomake on save
 let g:go_fmt_fail_silently = 1
 
+" run go test first to catch errors in tests and code, and then gometalinter
+let gomakeprg =
+  \ 'go test -o /tmp/vim-go-test -c ./%:h && ' .
+    \ 'gometalinter ' .
+      \ '--disable=gofmt ' .
+      \ '--disable=dupl ' .
+      \ '--tests ' .
+      \ '--fast ' .
+      \ '--sort=severity ' .
+      \ '--exclude "should have comment" ' .
+    \ '| grep "%"'
+
+" match gometalinter + go test output
+let goerrorformat =
+  \ '%f:%l:%c:%t%*[^:]:\ %m,' .
+  \ '%f:%l::%t%*[^:]:\ %m,' .
+  \ '%W%f:%l: warning: %m,' .
+  \ '%E%f:%l:%c:%m,' .
+  \ '%E%f:%l:%m,' .
+  \ '%C%\s%\+%m,' .
+  \ '%-G#%.%#'
+
 autocmd FileType go compiler go
 autocmd! BufEnter *.go setlocal shiftwidth=2 tabstop=2 softtabstop=2 noexpandtab
+autocmd BufEnter *.go let &makeprg = gomakeprg
+autocmd BufEnter *.go let &errorformat = goerrorformat
 
 " make on save to show build errors in quickfix
-autocmd! BufWritePost * Neomake
+autocmd! BufWritePost *.go Neomake!
 
 " open list automatically but preserve cursor position
 let g:neomake_open_list = 2
 let g:neomake_list_height = 5
-
-" disable golint; too noisy to be useful. add govet instead.
-let g:neomake_go_gobuild_maker = {
-    \ 'exe': 'sh',
-    \ 'args': ['-c', 'go build -o /tmp/vim-go-build ./\$0', '%:h'],
-    \ 'errorformat':
-        \ '%W%f:%l: warning: %m,' .
-        \ '%E%f:%l:%c:%m,' .
-        \ '%E%f:%l:%m,' .
-        \ '%C%\s%\+%m,' .
-        \ '%-G#%.%#'
-    \ }
-let g:neomake_go_gotest_maker = {
-    \ 'exe': 'sh',
-    \ 'args': ['-c', 'go test -o /tmp/vim-go-test -c ./\$0', '%:h'],
-    \ 'errorformat':
-        \ '%W%f:%l: warning: %m,' .
-        \ '%E%f:%l:%c:%m,' .
-        \ '%E%f:%l:%m,' .
-        \ '%C%\s%\+%m,' .
-        \ '%-G#%.%#'
-    \ }
-let g:neomake_go_gometalinter_maker = {
-    \ 'exe': 'sh',
-    \ 'args': ['-c', 'gometalinter --disable=gofmt --disable=dupl --tests --fast --sort=severity -e "should have comment" \$0 | grep \$1', '%:h', '%'],
-    \ 'errorformat': '%f:%l:%c:%t%*[^:]:\ %m,%f:%l::%t%*[^:]:\ %m',
-    \ }
-let g:neomake_go_enabled_makers = ['gobuild', 'gotest', 'gometalinter']
 
 " source local config if any
 if !empty(glob("~/.nvimrc.local"))
