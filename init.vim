@@ -110,7 +110,7 @@ let g:go_fmt_fail_silently = 1
 " run go test first to catch errors in tests and code, and then gometalinter
 let gomakeprg =
   \ 'go test -o /tmp/vim-go-test -c ./%:h && ' .
-    \ 'gometalinter ' .
+    \ '! gometalinter ' .
       \ '--disable=gofmt ' .
       \ '--disable=dupl ' .
       \ '--tests ' .
