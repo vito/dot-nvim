@@ -3,3 +3,4 @@ spell
 .nvimrc-rplugin~
 .undo/*
 !.undo/.gitkeep
+.init.vim-rplugin~
