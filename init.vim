@@ -81,7 +81,6 @@ endfunction
 " autocomplete config
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#omni_patterns = {}
-let g:deoplete#omni_patterns.go = '[a-zA-Z_\.]'
 
 " tab for cycling through options
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -93,53 +92,12 @@ function! s:close_and_linebreak()
   return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
 endfunction
 
-" disable fucking stupid yaml indenting logic
-autocmd FileType yaml setlocal indentexpr=
-
-" go setup
-let g:go_fmt_command = "goimports"
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-
-" vim-go's extra quickfix is redundant with Neomake on save
-let g:go_fmt_fail_silently = 1
-
-" run go test first to catch errors in tests and code, and then gometalinter
-let gomakeprg =
-  \ 'go test -o /tmp/vim-go-test -c ./%:h && ' .
-    \ '! gometalinter ' .
-      \ '--disable=gofmt ' .
-      \ '--disable=dupl ' .
-      \ '--tests ' .
-      \ '--fast ' .
-      \ '--sort=severity ' .
-      \ '--exclude "should have comment" ' .
-    \ '| grep "%"'
-
-" match gometalinter + go test output
-let goerrorformat =
-  \ '%f:%l:%c:%t%*[^:]:\ %m,' .
-  \ '%f:%l::%t%*[^:]:\ %m,' .
-  \ '%W%f:%l: warning: %m,' .
-  \ '%E%f:%l:%c:%m,' .
-  \ '%E%f:%l:%m,' .
-  \ '%C%\s%\+%m,' .
-  \ '%-G#%.%#'
-
-autocmd FileType go compiler go
-autocmd! BufEnter *.go setlocal shiftwidth=2 tabstop=2 softtabstop=2 noexpandtab
-autocmd BufEnter *.go let &makeprg = gomakeprg
-autocmd BufEnter *.go let &errorformat = goerrorformat
-
-" make on save to show build errors in quickfix
-autocmd! BufWritePost *.go Neomake!
-
 " open list automatically but preserve cursor position
 let g:neomake_open_list = 2
 let g:neomake_list_height = 5
+
+" load language-specific configuration
+runtime! lang/*.vim
 
 " source local config if any
 if !empty(glob("~/.nvimrc.local"))
