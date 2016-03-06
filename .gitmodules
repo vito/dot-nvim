@@ -58,3 +58,6 @@
 [submodule "bundle/elm-vim"]
 	path = bundle/elm-vim
 	url = https://github.com/ElmCast/elm-vim
+[submodule "bundle/vim-tmux"]
+	path = bundle/vim-tmux
+	url = https://github.com/tmux-plugins/vim-tmux
