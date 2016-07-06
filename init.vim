@@ -36,7 +36,7 @@ endif
 set wildignore+=*.a
 
 " colors
-colorscheme jellybeans
+colorscheme ir_black
 let g:jellybeans_use_lowcolor_black = 0
 
 " escape with smashing j and k; easier to press quickly on slow systems
