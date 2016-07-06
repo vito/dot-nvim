@@ -67,3 +67,6 @@
 [submodule "bundle/nofrils"]
 	path = bundle/nofrils
 	url = https://github.com/robertmeta/nofrils
+[submodule "bundle/vim-concourse"]
+	path = bundle/vim-concourse
+	url = https://github.com/luan/vim-concourse

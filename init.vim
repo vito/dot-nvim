@@ -103,3 +103,6 @@ runtime! lang/*.vim
 if !empty(glob("~/.nvimrc.local"))
   source ~/.nvimrc.local
 end
+
+" don't auto-fold
+set foldlevelstart=99
