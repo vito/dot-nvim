@@ -73,3 +73,6 @@
 [submodule "bundle/ack.vim"]
 	path = bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim
+[submodule "bundle/vim-enmasse"]
+	path = bundle/vim-enmasse
+	url = https://github.com/Olical/vim-enmasse
