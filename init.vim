@@ -96,6 +96,15 @@ endfunction
 let g:neomake_open_list = 2
 let g:neomake_list_height = 5
 
+" use ag instead of ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep --smart-case'
+  cnoreabbrev ag Ack
+  cnoreabbrev aG Ack
+  cnoreabbrev Ag Ack
+  cnoreabbrev AG Ack
+endif
+
 " load language-specific configuration
 runtime! lang/*.vim
 
