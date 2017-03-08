@@ -79,8 +79,11 @@ endfunction
 " set statusline=%{SyntaxItem()}
 
 " autocomplete config
+"set completeopt+=noinsert " neocomplete like
+set completeopt+=noselect " deoplete.nvim recommend
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#omni_patterns = {}
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 
 " tab for cycling through options
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
