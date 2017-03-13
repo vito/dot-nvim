@@ -1,9 +1,5 @@
 execute pathogen#infect()
 
-" NB: these may become default; see https://github.com/neovim/neovim/pull/2675
-filetype plugin indent on
-syntax enable
-
 " use comma as leader key
 let mapleader=","
 
