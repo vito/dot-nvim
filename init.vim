@@ -1,5 +1,8 @@
 execute pathogen#infect()
 
+" enable mouse in all modes
+set mouse=a
+
 " use comma as leader key
 let mapleader=","
 
