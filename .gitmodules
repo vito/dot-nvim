@@ -82,3 +82,6 @@
 [submodule "bundle/nerdtree-git-plugin"]
 	path = bundle/nerdtree-git-plugin
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin
+[submodule "bundle/echodoc.vim"]
+	path = bundle/echodoc.vim
+	url = https://github.com/Shougo/echodoc.vim
