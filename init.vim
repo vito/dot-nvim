@@ -102,11 +102,17 @@ let g:neomake_list_height = 5
 " use ag instead of ack
 if executable('ag')
   let g:ackprg = 'ag --vimgrep --smart-case'
-  cnoreabbrev ag Ack
-  cnoreabbrev aG Ack
   cnoreabbrev Ag Ack
-  cnoreabbrev AG Ack
 endif
+
+" ensure vertical splits don't split into NERDTree
+let g:ack_mappings = {
+      \  'v':  '<C-W><CR><C-W>L<C-W>p<C-W>J<C-W>p',
+      \ 'gv': '<C-W><CR><C-W>L<C-W>p<C-W>J' }
+
+" enable Ack-style bindings in quickfix/loclist windows
+" (e.g. s = open in split, v = open in vsplit, etc.)
+let g:qf_mapping_ack_style = 1
 
 " load language-specific configuration
 runtime! lang/*.vim

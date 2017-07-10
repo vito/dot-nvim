@@ -91,3 +91,6 @@
 [submodule "bundle/pegjs-vim"]
 	path = bundle/pegjs-vim
 	url = https://github.com/alunny/pegjs-vim
+[submodule "bundle/vim-qf"]
+	path = bundle/vim-qf
+	url = https://github.com/romainl/vim-qf
