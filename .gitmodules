@@ -88,3 +88,6 @@
 [submodule "bundle/booklit.vim"]
 	path = bundle/booklit.vim
 	url = https://github.com/vito/booklit.vim
+[submodule "bundle/pegjs-vim"]
+	path = bundle/pegjs-vim
+	url = https://github.com/alunny/pegjs-vim
