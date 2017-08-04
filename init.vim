@@ -110,13 +110,6 @@ let g:ack_mappings = {
       \  'v':  '<C-W><CR><C-W>L<C-W>p<C-W>J<C-W>p',
       \ 'gv': '<C-W><CR><C-W>L<C-W>p<C-W>J' }
 
-" enable Ack-style bindings in quickfix/loclist windows
-" (e.g. s = open in split, v = open in vsplit, etc.)
-let g:qf_mapping_ack_style = 1
-
-" having both ql and ll at bottom results in awkwardly large list panes
-let g:qf_loclist_window_bottom = 0
-
 " load language-specific configuration
 runtime! lang/*.vim
 

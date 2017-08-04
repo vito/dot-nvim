@@ -91,6 +91,9 @@
 [submodule "bundle/pegjs-vim"]
 	path = bundle/pegjs-vim
 	url = https://github.com/alunny/pegjs-vim
-[submodule "bundle/vim-qf"]
-	path = bundle/vim-qf
-	url = https://github.com/romainl/vim-qf
+[submodule "vim-qf_resize"]
+	path = vim-qf_resize
+	url = https://github.com/blueyed/vim-qf_resize
+[submodule "bundle/vim-qf_resize"]
+	path = bundle/vim-qf_resize
+	url = https://github.com/blueyed/vim-qf_resize
