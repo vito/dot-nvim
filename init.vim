@@ -61,6 +61,9 @@ nmap <BS> <C-w>h
 nmap j gj
 nmap k gk
 
+" don't insert two spaces after ., ?, or ! when gq'ing
+set nojoinspaces
+
 " nerdtree bindings
 nnoremap \ :NERDTreeToggle<CR>
 nnoremap \| :NERDTreeFind<CR>
