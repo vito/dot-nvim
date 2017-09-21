@@ -96,7 +96,6 @@ endfunction
 
 " open list automatically but preserve cursor position
 let g:neomake_open_list = 2
-let g:neomake_list_height = 5
 
 " use ag instead of ack
 if executable('ag')
@@ -114,3 +113,9 @@ end
 
 " don't auto-fold
 set foldlevelstart=99
+
+" don't force loclists to the bottom
+let g:qf_loclist_window_bottom = 0
+
+" let vim-qf_resize handle resizing, since vim-qf's is broken
+let g:qf_auto_resize = 0
