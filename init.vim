@@ -64,10 +64,6 @@ nmap k gk
 " don't insert two spaces after ., ?, or ! when gq'ing
 set nojoinspaces
 
-" nerdtree bindings
-nnoremap \ :NERDTreeToggle<CR>
-nnoremap \| :NERDTreeFind<CR>
-
 " undotree bindings
 nnoremap <leader>u :UndotreeToggle<CR>
 
@@ -107,11 +103,6 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep --smart-case'
   cnoreabbrev Ag Ack
 endif
-
-" ensure vertical splits don't split into NERDTree
-let g:ack_mappings = {
-      \  'v':  '<C-W><CR><C-W>L<C-W>p<C-W>J<C-W>p',
-      \ 'gv': '<C-W><CR><C-W>L<C-W>p<C-W>J' }
 
 " load language-specific configuration
 runtime! lang/*.vim
