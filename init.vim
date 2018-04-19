@@ -95,9 +95,6 @@ function! s:close_and_linebreak()
   return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
 endfunction
 
-" open list automatically but preserve cursor position
-let g:neomake_open_list = 2
-
 " use ag instead of ack
 if executable('ag')
   let g:ackprg = 'ag --vimgrep --smart-case'
