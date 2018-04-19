@@ -40,9 +40,6 @@
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule "bundle/neomake"]
-	path = bundle/neomake
-	url = https://github.com/benekastah/neomake
 [submodule "bundle/vim-unimpaired"]
 	path = bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired
@@ -88,12 +85,9 @@
 [submodule "bundle/vim-vinegar"]
 	path = bundle/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar
-[submodule "bundle/vim-qf"]
-	path = bundle/vim-qf
-	url = https://github.com/romainl/vim-qf
-[submodule "bundle/vim-qf_resize"]
-	path = bundle/vim-qf_resize
-	url = https://github.com/blueyed/vim-qf_resize
 [submodule "bundle/gruvbox"]
 	path = bundle/gruvbox
 	url = https://github.com/morhetz/gruvbox
+[submodule "bundle/ale"]
+	path = bundle/ale
+	url = https://github.com/w0rp/ale
