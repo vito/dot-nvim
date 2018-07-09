@@ -94,3 +94,6 @@
 [submodule "bundle/vim-qf_resize"]
 	path = bundle/vim-qf_resize
 	url = https://github.com/blueyed/vim-qf_resize
+[submodule "bundle/gruvbox"]
+	path = bundle/gruvbox
+	url = https://github.com/morhetz/gruvbox
