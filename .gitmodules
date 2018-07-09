@@ -91,3 +91,9 @@
 [submodule "bundle/ale"]
 	path = bundle/ale
 	url = https://github.com/w0rp/ale
+[submodule "bundle/vim-ps1"]
+	path = bundle/vim-ps1
+	url = https://github.com/PProvost/vim-ps1
+[submodule "bundle/deoplete-elm"]
+	path = bundle/deoplete-elm
+	url = https://github.com/pbogut/deoplete-elm
