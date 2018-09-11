@@ -103,3 +103,6 @@
 [submodule "bundle/ncm2-path"]
 	path = bundle/ncm2-path
 	url = https://github.com/ncm2/ncm2-path
+[submodule "bundle/vim-jsonnet"]
+	path = bundle/vim-jsonnet
+	url = https://github.com/google/vim-jsonnet
