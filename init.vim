@@ -117,3 +117,7 @@ let g:qf_auto_resize = 0
 
 " exclude gitignored files from ctrl+p
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+
+" ale navigation
+nnoremap <leader>k <Plug>(ale_previous_wrap)
+nnoremap <leader>j <Plug>(ale_next_wrap)
