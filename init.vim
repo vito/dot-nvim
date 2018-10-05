@@ -108,6 +108,7 @@ end
 
 " don't auto-fold
 set foldlevelstart=99
+set foldmethod=syntax
 
 " don't force loclists to the bottom
 let g:qf_loclist_window_bottom = 0
