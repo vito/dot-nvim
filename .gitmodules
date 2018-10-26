@@ -106,3 +106,6 @@
 [submodule "bundle/vim-jsonnet"]
 	path = bundle/vim-jsonnet
 	url = https://github.com/google/vim-jsonnet
+[submodule "bundle/vim-systemd-syntax"]
+	path = bundle/vim-systemd-syntax
+	url = https://github.com/Matt-Deacalion/vim-systemd-syntax
