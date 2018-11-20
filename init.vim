@@ -121,3 +121,6 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-stand
 " ale navigation
 nnoremap <leader>k <Plug>(ale_previous_wrap)
 nnoremap <leader>j <Plug>(ale_next_wrap)
+
+" bosh spec highlighting
+autocmd BufNewFile,BufReadPost spec set filetype=yaml
