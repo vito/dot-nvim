@@ -37,7 +37,7 @@ set wildignore+=*.a
 " colors
 set termguicolors
 set background=dark
-colorscheme gruvbox
+colorscheme base16-gruvbox-dark-soft
 
 " escape with smashing j and k; easier to press quickly on slow systems
 imap jk <esc>
