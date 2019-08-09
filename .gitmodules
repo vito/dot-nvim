@@ -1,6 +1,3 @@
-[submodule "bundle/atomy-vim"]
-	path = bundle/atomy-vim
-	url = https://github.com/vito/atomy-vim
 [submodule "bundle/ctrlp.vim"]
 	path = bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim
@@ -19,9 +16,6 @@
 [submodule "bundle/vim-better-whitespace"]
 	path = bundle/vim-better-whitespace
 	url = https://github.com/ntpeters/vim-better-whitespace
-[submodule "bundle/vim-go"]
-	path = bundle/vim-go
-	url = https://github.com/fatih/vim-go
 [submodule "bundle/vim-yaml"]
 	path = bundle/vim-yaml
 	url = https://github.com/stephpy/vim-yaml
@@ -40,9 +34,6 @@
 [submodule "bundle/vim-eunuch"]
 	path = bundle/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch
-[submodule "bundle/elm-vim"]
-	path = bundle/elm-vim
-	url = https://github.com/ElmCast/elm-vim
 [submodule "bundle/vim-tmux"]
 	path = bundle/vim-tmux
 	url = https://github.com/tmux-plugins/vim-tmux
@@ -52,12 +43,6 @@
 [submodule "bundle/vim-concourse"]
 	path = bundle/vim-concourse
 	url = https://github.com/luan/vim-concourse
-[submodule "bundle/ir_black"]
-	path = bundle/ir_black
-	url = https://github.com/twerth/ir_black
-[submodule "bundle/ack.vim"]
-	path = bundle/ack.vim
-	url = https://github.com/mileszs/ack.vim
 [submodule "bundle/vim-enmasse"]
 	path = bundle/vim-enmasse
 	url = https://github.com/Olical/vim-enmasse
@@ -73,27 +58,9 @@
 [submodule "bundle/vim-vinegar"]
 	path = bundle/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar
-[submodule "bundle/ale"]
-	path = bundle/ale
-	url = https://github.com/w0rp/ale
 [submodule "bundle/vim-ps1"]
 	path = bundle/vim-ps1
 	url = https://github.com/PProvost/vim-ps1
-[submodule "bundle/nvim-yarp"]
-	path = bundle/nvim-yarp
-	url = https://github.com/roxma/nvim-yarp
-[submodule "bundle/ncm2"]
-	path = bundle/ncm2
-	url = https://github.com/ncm2/ncm2
-[submodule "bundle/ncm2-go"]
-	path = bundle/ncm2-go
-	url = https://github.com/ncm2/ncm2-go
-[submodule "bundle/ncm2-bufword"]
-	path = bundle/ncm2-bufword
-	url = https://github.com/ncm2/ncm2-bufword
-[submodule "bundle/ncm2-path"]
-	path = bundle/ncm2-path
-	url = https://github.com/ncm2/ncm2-path
 [submodule "bundle/vim-jsonnet"]
 	path = bundle/vim-jsonnet
 	url = https://github.com/google/vim-jsonnet

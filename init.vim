@@ -54,7 +54,6 @@ nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
-
 " work around sketchy <C-h> behavior; hopefully this can be removed someday
 nmap <BS> <C-w>h
 
@@ -74,29 +73,20 @@ function! SyntaxItem()
     \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
     \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"
 endfunction
-
 " set statusline=%{SyntaxItem()}
 
 " autocomplete config
-autocmd BufEnter * call ncm2#enable_for_buffer()
 set cmdheight=2
 set completeopt=noinsert,menuone,noselect
 
-" tab for cycling through options
-inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" don't auto-fold
+set foldlevelstart=99
 
-" enter closes options if present and inserts linebreak
-" apparently this has to be that complicated
-inoremap <silent> <CR> <C-r>=<SID>close_and_linebreak()<CR>
-function! s:close_and_linebreak()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-endfunction
+" exclude gitignored files from ctrl+p
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 
-" use ag instead of ack
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep --smart-case'
-  cnoreabbrev Ag Ack
-endif
+" set a file for spellwords
+set spellfile=~/.config/nvim/spell.utf-8.add
 
 " load language-specific configuration
 runtime! lang/*.vim
@@ -105,25 +95,3 @@ runtime! lang/*.vim
 if !empty(glob("~/.nvimrc.local"))
   source ~/.nvimrc.local
 end
-
-" don't auto-fold
-set foldlevelstart=99
-
-" don't force loclists to the bottom
-let g:qf_loclist_window_bottom = 0
-
-" let vim-qf_resize handle resizing, since vim-qf's is broken
-let g:qf_auto_resize = 0
-
-" exclude gitignored files from ctrl+p
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-
-" ale navigation
-nnoremap <leader>k <Plug>(ale_previous_wrap)
-nnoremap <leader>j <Plug>(ale_next_wrap)
-
-" bosh spec highlighting
-autocmd BufNewFile,BufReadPost spec set filetype=yaml
-
-" set a file for spellwords
-set spellfile=~/.config/nvim/spell.utf-8.add
