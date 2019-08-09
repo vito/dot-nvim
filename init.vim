@@ -15,6 +15,7 @@ set shell=/bin/bash
 
 " 2 spaces for tabs
 set expandtab
+set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
@@ -33,11 +34,6 @@ endif
 
 " ignore binary files
 set wildignore+=*.a
-
-" colors
-set termguicolors
-set background=dark
-colorscheme base16-gruvbox-dark-soft
 
 " escape with smashing j and k; easier to press quickly on slow systems
 imap jk <esc>
@@ -67,23 +63,8 @@ set nojoinspaces
 " undotree bindings
 nnoremap <leader>u :UndotreeToggle<CR>
 
-" utility for colorscheme development
-function! SyntaxItem()
-  return "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-    \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-    \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"
-endfunction
-" set statusline=%{SyntaxItem()}
-
-" autocomplete config
-set cmdheight=2
-set completeopt=noinsert,menuone,noselect
-
 " don't auto-fold
 set foldlevelstart=99
-
-" exclude gitignored files from ctrl+p
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 
 " set a file for spellwords
 set spellfile=~/.config/nvim/spell.utf-8.add
@@ -91,7 +72,23 @@ set spellfile=~/.config/nvim/spell.utf-8.add
 " load language-specific configuration
 runtime! lang/*.vim
 
+" load plugin-centric config
+runtime! ext/colors.vim
+runtime! ext/coc.vim
+runtime! ext/lightline.vim
+runtime! ext/multiple-cursors.vim
+runtime! ext/coc-list.vim
+runtime! ext/completion.vim
+
 " source local config if any
 if !empty(glob("~/.nvimrc.local"))
   source ~/.nvimrc.local
 end
+
+" TODO: this could be automated if i decide to switch to vim-plugin:
+"
+"   https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#install-extensions
+"
+" CocInstall coc-lists
+" CocInstall coc-go
+" CocInstall coc-vimlsp
