@@ -85,10 +85,14 @@ if !empty(glob("~/.nvimrc.local"))
   source ~/.nvimrc.local
 end
 
-" TODO: this could be automated if i decide to switch to vim-plugin:
-"
-"   https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#install-extensions
-"
-" CocInstall coc-lists
-" CocInstall coc-go
-" CocInstall coc-vimlsp
+" coc extensions
+let g:coc_global_extensions =
+      \ [
+      \   'coc-lists',
+      \   'coc-git',
+      \   'coc-go',
+      \   'coc-sh',
+      \   'coc-css',
+      \   'coc-html',
+      \   'coc-vimlsp'
+      \ ]
