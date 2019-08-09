@@ -5,7 +5,7 @@ git clone https://github.com/vito/dot-nvim.git ~/.config/nvim --recursive
 
 # there is no step 2
 
-cat > <<EOF
+cat <<EOF
 cheatsheet:
   normal mode:
     <Enter> - save
