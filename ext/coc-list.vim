@@ -11,8 +11,7 @@ nnoremap <silent> <leader>cc  :<C-u>CocList commands<cr>
 nnoremap <silent> <leader>co  :<C-u>CocList outline<cr>
 
 " search workspace symbols
-" nnoremap <silent> <leader>cs  :<C-u>CocList -I symbols<cr>
-nnoremap <silent> <leader>cs  :<C-u>CocSearch
+nnoremap <silent> <leader>cs  :<C-u>CocList -I symbols<cr>
 
 " resume latest coc list
 nnoremap <silent> <leader>cp  :<C-u>CocListResume<CR>

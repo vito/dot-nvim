@@ -60,9 +60,6 @@ nmap k gk
 " don't insert two spaces after ., ?, or ! when gq'ing
 set nojoinspaces
 
-" undotree bindings
-nnoremap <leader>u :UndotreeToggle<CR>
-
 " don't auto-fold
 set foldlevelstart=99
 
@@ -79,6 +76,7 @@ runtime! ext/lightline.vim
 runtime! ext/multiple-cursors.vim
 runtime! ext/coc-list.vim
 runtime! ext/completion.vim
+runtime! ext/undotree.vim
 
 " source local config if any
 if !empty(glob("~/.nvimrc.local"))
