@@ -124,3 +124,6 @@ nnoremap <leader>j <Plug>(ale_next_wrap)
 
 " bosh spec highlighting
 autocmd BufNewFile,BufReadPost spec set filetype=yaml
+
+" set a file for spellwords
+set spellfile=~/.config/nvim/spell.utf-8.add
