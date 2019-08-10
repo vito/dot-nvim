@@ -1,4 +1,13 @@
 {
+  "diagnostic.virtualText": true,
+
+  "suggest.enablePreview": true,
+  "suggest.enablePreselect": false,
+
+  "codeLens.enable": true,
+
+  "coc.preferences.formatOnSaveFiletypes": ["go", "elm"],
+
   "languageserver": {
     "elmLS": {
       "command": "elm-language-server",
@@ -11,6 +20,5 @@
         "elmTestPath": "elm-test"
       }
     }
-  },
-  "coc.preferences.formatOnSaveFiletypes": ["go", "elm"]
+  }
 }
