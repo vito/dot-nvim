@@ -1,6 +1,8 @@
 {
   "diagnostic.virtualText": true,
 
+  "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+
   "suggest.enablePreview": true,
   "suggest.enablePreselect": false,
 
