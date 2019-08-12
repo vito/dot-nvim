@@ -43,9 +43,6 @@
 [submodule "bundle/vim-enmasse"]
 	path = bundle/vim-enmasse
 	url = https://github.com/Olical/vim-enmasse
-[submodule "bundle/echodoc.vim"]
-	path = bundle/echodoc.vim
-	url = https://github.com/Shougo/echodoc.vim
 [submodule "bundle/booklit.vim"]
 	path = bundle/booklit.vim
 	url = https://github.com/vito/booklit.vim
