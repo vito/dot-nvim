@@ -10,6 +10,17 @@ let g:lightline = {
       \       ['lineinfo'],
       \       ['percent'],
       \       ['filetype']
+      \     ],
+      \   },
+      \   'inactive': {
+      \     'left': [
+      \       ['readonly', 'relativepath', 'modified'],
+      \       ['currentfunction', 'cocstatus']
+      \     ],
+      \     'right': [
+      \       ['lineinfo'],
+      \       ['percent'],
+      \       ['filetype']
       \     ]
       \   },
       \   'component_function': {
