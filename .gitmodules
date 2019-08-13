@@ -77,3 +77,6 @@
 [submodule "bundle/vim-elm-syntax"]
 	path = bundle/vim-elm-syntax
 	url = https://github.com/andys8/vim-elm-syntax
+[submodule "bundle/vim-rhubarb"]
+	path = bundle/vim-rhubarb
+	url = https://github.com/tpope/vim-rhubarb
