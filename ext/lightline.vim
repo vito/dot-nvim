@@ -1,3 +1,7 @@
+" no point showing the mode twice
+set noshowmode
+
+" configure lightline
 let g:lightline = {
       \   'colorscheme': 'one',
       \   'active': {
@@ -31,6 +35,8 @@ let g:lightline = {
       \   },
       \   'component': {}
       \ }
+
+" lightline helpers
 
 function! CocCurrentFunction()
     return get(b:, 'coc_current_function', '')
