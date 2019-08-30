@@ -80,3 +80,6 @@
 [submodule "bundle/vim-rhubarb"]
 	path = bundle/vim-rhubarb
 	url = https://github.com/tpope/vim-rhubarb
+[submodule "bundle/markdown-preview.nvim"]
+	path = bundle/markdown-preview.nvim
+	url = https://github.com/iamcco/markdown-preview.nvim
