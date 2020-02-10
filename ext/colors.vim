@@ -1,8 +1,8 @@
-" taken from vim-one readme and stripped down
-if empty($TMUX)
-  if has("termguicolors")
-    set termguicolors
-  endif
+" from one-dark readme
+set t_8b=^[[48;2;%lu;%lu;%lum
+set t_8f=^[[38;2;%lu;%lu;%lum
+if has("termguicolors")
+  set termguicolors
 endif
 
 " allow use of italic text
