@@ -83,3 +83,6 @@
 [submodule "bundle/markdown-preview.nvim"]
 	path = bundle/markdown-preview.nvim
 	url = https://github.com/iamcco/markdown-preview.nvim
+[submodule "bundle/vim-mustache-handlebars"]
+	path = bundle/vim-mustache-handlebars
+	url = https://github.com/mustache/vim-mustache-handlebars
