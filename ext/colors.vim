@@ -1,16 +1,9 @@
-" from one-dark readme
-set t_8b=^[[48;2;%lu;%lu;%lum
-set t_8f=^[[38;2;%lu;%lu;%lum
-if has("termguicolors")
-  set termguicolors
-endif
-
-" allow use of italic text
-let g:one_allow_italics = 1
+let g:nord_italic = 1
+let g:nord_underline = 1
+let g:nord_cursor_line_number_background = 1
 
 " set colors
-colorscheme one
-set background=dark
+colorscheme nord
 
 " utility for colorscheme development
 function! SyntaxItem()
