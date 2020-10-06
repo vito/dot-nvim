@@ -71,13 +71,7 @@ set spellfile=~/.config/nvim/spell.utf-8.add
 runtime! lang/*.vim
 
 " load plugin-centric config
-runtime! ext/colors.vim
-runtime! ext/coc.vim
-runtime! ext/lightline.vim
-runtime! ext/multiple-cursors.vim
-runtime! ext/coc-list.vim
-runtime! ext/completion.vim
-runtime! ext/undotree.vim
+runtime! ext/*.vim
 
 " source local config if any
 if !empty(glob("~/.nvimrc.local"))
