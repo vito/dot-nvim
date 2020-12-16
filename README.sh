@@ -24,9 +24,9 @@ cheatsheet:
     ,cc - fuzzy execute coc command
     ,cd - fuzzy select diagnostics
     ,ce - fuzzy list installed coc extensions
-    ,cf - fuzzy find file (i.e. ctrl+p)
+    ,cf or <C-p> - fuzzy find file
     ,cg - fuzzy grep across all files
-    ,cm - fuzzy find most-recently-used file
+    ,cm or <C-u> - fuzzy find most-recently-used file
     ,co - fuzzy find symbol across workspace
     ,co - fuzzy find symbol in open file
     ,cp - reopen last fuzzy pane

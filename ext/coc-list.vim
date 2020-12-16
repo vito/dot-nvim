@@ -19,6 +19,8 @@ nnoremap <silent> <leader>cp  :<C-u>CocListResume<CR>
 " fast file/mru switching
 nnoremap <silent> <leader>cf  :<C-u>CocList files<cr>
 nnoremap <silent> <leader>cm  :<C-u>CocList mru<cr>
+nnoremap <silent> <C-p>       :<C-u>CocList files<cr>
+nnoremap <silent> <C-u>       :<C-u>CocList mru<cr>
 
 " live grep (Ag/Ack/Grep replacement)
 nnoremap <silent> <leader>cg  :<C-u>CocList grep<cr>
