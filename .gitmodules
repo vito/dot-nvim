@@ -86,3 +86,9 @@
 [submodule "bundle/nord-vim"]
 	path = bundle/nord-vim
 	url = https://github.com/arcticicestudio/nord-vim
+[submodule "bundle/vim-mkdir"]
+	path = bundle/vim-mkdir
+	url = https://github.com/pbrisbin/vim-mkdir
+[submodule "bundle/vim-toml"]
+	path = bundle/vim-toml
+	url = https://github.com/cespare/vim-toml
