@@ -34,13 +34,18 @@ cheatsheet:
     ,cG - grep across workspace (i.e. Ag/Ack/Rg); opens pane with each occurrence
           editable with multi-cursors
 
-    [c - previous diagnostic
-    ]c - next diagnostic
+    [g - previous diagnostic
+    ]g - next diagnostic
 
     ,rn - rename function/var/etc
 
     :Format - reformat current file
     :OR     - organize imports
+
+    gd - go to definition
+    gy - go to definition of value's type
+    gi - go to implementations of interface or method
+    gr - go to references
 
   insert mode:
     jk - <esc>
