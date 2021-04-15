@@ -31,9 +31,6 @@
 [submodule "bundle/vim-tmux"]
 	path = bundle/vim-tmux
 	url = https://github.com/tmux-plugins/vim-tmux
-[submodule "bundle/vim-hcl"]
-	path = bundle/vim-hcl
-	url = https://github.com/b4b4r07/vim-hcl
 [submodule "bundle/vim-enmasse"]
 	path = bundle/vim-enmasse
 	url = https://github.com/Olical/vim-enmasse
@@ -92,3 +89,9 @@
 [submodule "bundle/vim-toml"]
 	path = bundle/vim-toml
 	url = https://github.com/cespare/vim-toml
+[submodule "bundle/vim-terraform"]
+	path = bundle/vim-terraform
+	url = https://github.com/hashivim/vim-terraform
+[submodule "bundle/vim-wordy"]
+	path = bundle/vim-wordy
+	url = https://github.com/reedes/vim-wordy
