@@ -1,20 +1,20 @@
 " show all diagnostics
-nnoremap <silent> <leader>cd  :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <leader>cd  :<C-u>CocFzfList diagnostics<cr>
 
 " manage extensions
-nnoremap <silent> <leader>ce  :<C-u>CocList extensions<cr>
+nnoremap <silent> <leader>ce  :<C-u>CocFzfList extensions<cr>
 
 " show commands
-nnoremap <silent> <leader>cc  :<C-u>CocList commands<cr>
+nnoremap <silent> <leader>cc  :<C-u>CocFzfList commands<cr>
 
 " find symbol of current document
-nnoremap <silent> <leader>co  :<C-u>CocList outline<cr>
+nnoremap <silent> <leader>co  :<C-u>CocFzfList outline<cr>
 
 " search workspace symbols
-nnoremap <silent> <leader>cs  :<C-u>CocList -I symbols<cr>
+nnoremap <silent> <leader>cs  :<C-u>CocFzfList -I symbols<cr>
 
 " resume latest coc list
-nnoremap <silent> <leader>cp  :<C-u>CocListResume<CR>
+nnoremap <silent> <leader>cp  :<C-u>CocFzfListResume<CR>
 
 " fast file/mru switching
 nnoremap <silent> <leader>cf  :<C-u>CocList files<cr>

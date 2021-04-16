@@ -95,3 +95,12 @@
 [submodule "bundle/VimClojure"]
 	path = bundle/VimClojure
 	url = https://github.com/vim-scripts/VimClojure
+[submodule "bundle/base16-vim"]
+	path = bundle/base16-vim
+	url = https://github.com/fnune/base16-vim
+[submodule "bundle/fzf"]
+	path = bundle/fzf
+	url = https://github.com/junegunn/fzf
+[submodule "bundle/coc-fzf"]
+	path = bundle/coc-fzf
+	url = https://github.com/antoinemadec/coc-fzf
