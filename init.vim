@@ -30,7 +30,7 @@ set backupdir=~/.vim-tmp,~/tmp,/var/tmp,/tmp
 " undo persists across sessions
 if has('persistent_undo')
   set undofile
-  set undodir=~/.nvim/.undo
+  set undodir=~/.config/nvim/.undo
 endif
 
 " ignore binary files
