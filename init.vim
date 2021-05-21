@@ -87,5 +87,6 @@ let g:coc_global_extensions =
       \   'coc-sh',
       \   'coc-css',
       \   'coc-html',
-      \   'coc-vimlsp'
+      \   'coc-vimlsp',
+      \   'coc-explorer'
       \ ]
