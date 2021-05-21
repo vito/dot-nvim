@@ -14,7 +14,7 @@ nnoremap <silent> <leader>co  :<C-u>CocFzfList outline<cr>
 nnoremap <silent> <leader>cs  :<C-u>CocFzfList -I symbols<cr>
 
 " resume latest coc list
-nnoremap <silent> <leader>cp  :<C-u>CocFzfListResume<CR>
+nnoremap <silent> <leader>cp  :<C-u>CocListResume<CR>
 
 " fast file/mru switching
 nnoremap <silent> <leader>cf  :<C-u>CocList files<cr>
