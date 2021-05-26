@@ -91,12 +91,12 @@
 [submodule "bundle/VimClojure"]
 	path = bundle/VimClojure
 	url = https://github.com/vim-scripts/VimClojure
-[submodule "bundle/base16-vim"]
-	path = bundle/base16-vim
-	url = https://github.com/fnune/base16-vim
 [submodule "bundle/vim-base16-lightline"]
 	path = bundle/vim-base16-lightline
 	url = https://github.com/daviesjamie/vim-base16-lightline
 [submodule "bundle/nvim-lspconfig"]
 	path = bundle/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig
+[submodule "bundle/nvim-base16"]
+	path = bundle/nvim-base16
+	url = https://github.com/RRethy/nvim-base16
