@@ -106,3 +106,9 @@
 [submodule "bundle/nvim-compe"]
 	path = bundle/nvim-compe
 	url = https://github.com/hrsh7th/nvim-compe
+[submodule "bundle/trouble.nvim"]
+	path = bundle/trouble.nvim
+	url = https://github.com/folke/trouble.nvim
+[submodule "bundle/lsp-colors.nvim"]
+	path = bundle/lsp-colors.nvim
+	url = https://github.com/folke/lsp-colors.nvim
