@@ -103,3 +103,6 @@
 [submodule "bundle/nvim-treesitter"]
 	path = bundle/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule "bundle/nvim-compe"]
+	path = bundle/nvim-compe
+	url = https://github.com/hrsh7th/nvim-compe
