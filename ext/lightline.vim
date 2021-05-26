@@ -2,8 +2,9 @@
 " set noshowmode
 
 " configure lightline
-" let g:lightline = {
-"       \   'colorscheme': 'nord',
+let g:lightline = {
+      \   'colorscheme': 'base16'
+      \ }
 "       \   'active': {
 "       \     'left': [
 "       \       ['mode', 'paste'],

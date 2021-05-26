@@ -94,3 +94,6 @@
 [submodule "bundle/base16-vim"]
 	path = bundle/base16-vim
 	url = https://github.com/fnune/base16-vim
+[submodule "bundle/vim-base16-lightline"]
+	path = bundle/vim-base16-lightline
+	url = https://github.com/daviesjamie/vim-base16-lightline
