@@ -97,3 +97,6 @@
 [submodule "bundle/vim-base16-lightline"]
 	path = bundle/vim-base16-lightline
 	url = https://github.com/daviesjamie/vim-base16-lightline
+[submodule "bundle/nvim-lspconfig"]
+	path = bundle/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
