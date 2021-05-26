@@ -77,16 +77,3 @@ runtime! ext/*.vim
 if !empty(glob("~/.nvimrc.local"))
   source ~/.nvimrc.local
 end
-
-" coc extensions
-let g:coc_global_extensions =
-      \ [
-      \   'coc-lists',
-      \   'coc-git',
-      \   'coc-go',
-      \   'coc-sh',
-      \   'coc-css',
-      \   'coc-html',
-      \   'coc-vimlsp',
-      \   'coc-explorer'
-      \ ]

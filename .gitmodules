@@ -52,10 +52,6 @@
 [submodule "bundle/vim-systemd-syntax"]
 	path = bundle/vim-systemd-syntax
 	url = https://github.com/Matt-Deacalion/vim-systemd-syntax
-[submodule "bundle/coc.nvim"]
-	path = bundle/coc.nvim
-	url = https://github.com/neoclide/coc.nvim
-	branch = release
 [submodule "bundle/lightline.vim"]
 	path = bundle/lightline.vim
 	url = https://github.com/itchyny/lightline.vim
@@ -98,9 +94,3 @@
 [submodule "bundle/base16-vim"]
 	path = bundle/base16-vim
 	url = https://github.com/fnune/base16-vim
-[submodule "bundle/fzf"]
-	path = bundle/fzf
-	url = https://github.com/junegunn/fzf
-[submodule "bundle/coc-fzf"]
-	path = bundle/coc-fzf
-	url = https://github.com/antoinemadec/coc-fzf
