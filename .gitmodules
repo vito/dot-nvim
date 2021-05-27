@@ -112,3 +112,12 @@
 [submodule "bundle/lsp-colors.nvim"]
 	path = bundle/lsp-colors.nvim
 	url = https://github.com/folke/lsp-colors.nvim
+[submodule "bundle/telescope.nvim"]
+	path = bundle/telescope.nvim
+	url = https://github.com/nvim-telescope/telescope.nvim
+[submodule "bundle/popup.nvim"]
+	path = bundle/popup.nvim
+	url = https://github.com/nvim-lua/popup.nvim
+[submodule "bundle/plenary.nvim"]
+	path = bundle/plenary.nvim
+	url = https://github.com/nvim-lua/plenary.nvim
