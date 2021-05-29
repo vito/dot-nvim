@@ -121,3 +121,6 @@
 [submodule "bundle/clojure.vim"]
 	path = bundle/clojure.vim
 	url = https://github.com/clojure-vim/clojure.vim
+[submodule "bundle/gitsigns.nvim"]
+	path = bundle/gitsigns.nvim
+	url = https://github.com/lewis6991/gitsigns.nvim
