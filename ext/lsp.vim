@@ -1,3 +1,6 @@
+" fix go-to-definition in unsaved buffer
+set hidden
+
 lua << EOF
 local nvim_lsp = require('lspconfig')
 
