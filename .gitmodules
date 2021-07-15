@@ -106,9 +106,11 @@
 [submodule "bundle/trouble.nvim"]
 	path = bundle/trouble.nvim
 	url = https://github.com/folke/trouble.nvim
+  branch = main
 [submodule "bundle/lsp-colors.nvim"]
 	path = bundle/lsp-colors.nvim
 	url = https://github.com/folke/lsp-colors.nvim
+  branch = main
 [submodule "bundle/telescope.nvim"]
 	path = bundle/telescope.nvim
 	url = https://github.com/nvim-telescope/telescope.nvim
@@ -124,6 +126,7 @@
 [submodule "bundle/gitsigns.nvim"]
 	path = bundle/gitsigns.nvim
 	url = https://github.com/lewis6991/gitsigns.nvim
+  branch = main
 [submodule "bundle/instant.nvim"]
 	path = bundle/instant.nvim
 	url = https://github.com/jbyuki/instant.nvim
