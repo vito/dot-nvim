@@ -1,4 +1,5 @@
-execute pathogen#infect()
+" load plugins
+runtime! plugins.vim
 
 " enable mouse in all modes
 set mouse=a
