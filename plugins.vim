@@ -13,6 +13,7 @@ if !exists('g:vscode')
   Plug 'iamcco/markdown-preview.nvim'
   Plug 'vito/base16-vim'
   Plug 'daviesjamie/vim-base16-lightline'
+  Plug 'norcalli/nvim-colorizer.lua'
 
   " syntax
   Plug 'stephpy/vim-yaml'
