@@ -57,7 +57,7 @@ let g:lightline = {
       \   'active': {
       \     'left': [
       \       ['mode', 'paste'],
-      \       ['readonly', 'filename'],
+      \       ['readonly', 'relativepath'],
       \       ['fugitive']
       \     ],
       \     'right': [
@@ -68,7 +68,7 @@ let g:lightline = {
       \   },
       \   'inactive': {
       \     'left': [
-      \       ['readonly', 'filename'],
+      \       ['readonly', 'relativepath'],
       \       ['fugitive']
       \     ],
       \     'right': [
