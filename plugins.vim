@@ -9,10 +9,9 @@ if !exists('g:vscode')
   " editor UI
   Plug 'mbbill/undotree'
   Plug 'lewis6991/gitsigns.nvim'
-  Plug 'itchyny/lightline.vim'
+  Plug 'nvim-lualine/lualine.nvim'
   Plug 'iamcco/markdown-preview.nvim'
   Plug 'vito/base16-vim'
-  Plug 'daviesjamie/vim-base16-lightline'
   Plug 'norcalli/nvim-colorizer.lua'
 
   " syntax
