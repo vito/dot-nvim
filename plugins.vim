@@ -47,7 +47,9 @@ if !exists('g:vscode')
 
   " redundant
   Plug 'neovim/nvim-lspconfig'
-  Plug 'hrsh7th/nvim-compe'
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/nvim-cmp'
   Plug 'folke/trouble.nvim'
   Plug 'folke/lsp-colors.nvim'
   Plug 'nvim-treesitter/nvim-treesitter'
