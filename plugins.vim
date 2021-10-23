@@ -39,6 +39,8 @@ if !exists('g:vscode')
   Plug 'tpope/vim-vinegar'
   Plug 'jremmen/vim-ripgrep'
   Plug 'pbrisbin/vim-mkdir'
+  Plug 'voldikss/vim-floaterm'
+  Plug 'vim-test/vim-test'
 
   " doesn't work
   Plug 'nvim-telescope/telescope.nvim'
