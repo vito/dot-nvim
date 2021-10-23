@@ -42,7 +42,9 @@ imap jk <esc>
 imap kj <esc>
 
 " save on enter
-nmap <cr> :w<cr>
+if !exists('g:vscode')
+  nmap <cr> :w<cr>
+endif
 
 " clear highlights on space
 nmap <space> :noh<cr>
@@ -68,11 +70,13 @@ set foldlevelstart=99
 " set a file for spellwords
 set spellfile=~/.config/nvim/spell.utf-8.add
 
-" load language-specific configuration
-runtime! lang/*.vim
+if !exists('g:vscode')
+  " load language-specific configuration
+  runtime! lang/*.vim
 
-" load plugin-centric config
-runtime! ext/*.vim
+  " load plugin-centric config
+  runtime! ext/*.vim
+endif
 
 " source local config if any
 if !empty(glob("~/.nvimrc.local"))
