@@ -50,8 +50,6 @@ if !exists('g:vscode')
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/nvim-cmp'
-  Plug 'folke/trouble.nvim'
-  Plug 'folke/lsp-colors.nvim'
   Plug 'nvim-treesitter/nvim-treesitter'
   Plug 'ntpeters/vim-better-whitespace'
 
