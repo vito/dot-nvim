@@ -2,9 +2,7 @@
 set hidden
 
 lua <<EOF
-local lsp = require('lspconfig')
-local configs = require('lspconfig/configs')
-local util = require('lspconfig/util')
+local lspconfig = require('lspconfig')
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -38,28 +36,12 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
-configs['bass'] = {
-  default_config = {
-    cmd = { 'bass-lsp' },
-    root_dir = util.root_pattern('.git'),
-    filetypes = { 'clojure' }
-  },
-
-  docs = {
-    description = [[https://github.com/vito/bass]],
-  },
-}
-
-lsp.bass.setup {
-  on_attach = on_attach
-}
-
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 -- yarn global add vscode-css-languageserver-bin dockerfile-language-server-nodejs elm elm-test elm-format @elm-tooling/elm-language-server vscode-html-languageserver-bin yaml-language-server
 -- https://github.com/hashicorp/terraform-ls/releases/download/v0.17.1/terraform-ls_0.17.1_linux_amd64.zip
 local servers = { "gopls", "cssls", "dockerls", "elmls", "html", "terraformls", "yamlls" }
 for _, server in ipairs(servers) do
-  lsp[server].setup { on_attach = on_attach }
+  lspconfig[server].setup { on_attach = on_attach }
 end
 EOF
