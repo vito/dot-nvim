@@ -1,9 +1,10 @@
 #!/bin/sh
 
 # step 1
-git clone https://github.com/vito/dot-nvim.git ~/.config/nvim --recursive
+git clone https://github.com/vito/dot-nvim.git ~/.config/nvim
 
-# there is no step 2
+# step 2
+vim +PlugInstall
 
 cat <<EOF
 cheatsheet:
@@ -15,20 +16,41 @@ cheatsheet:
 
     ,u - toggle undo tree
 
+    # LSP
+    [d - previous diagnostic
+    ]d - next diagnostic
+    gd - go to definition
+    gy - go to definition of value's type
+    gi - go to implementations of interface or method
+    gr - go to references
+    ,rn - rename function/var/etc
+
+    # telescope
     ,ff - fuzzy find file
     ,fg - fuzzy grep across all files
     ,fb - fuzzy switch buffer
     ,fh - fuzzy vim help tags
 
-    [d - previous diagnostic
-    ]d - next diagnostic
+    # floaterm
+    <C-t> - toggle floaterm (assumes fish shell)
 
-    ,rn - rename function/var/etc
+    # from gitsigns
+    [c  - previous hunk
+    ]c  - next hunk
+    ,hs - stage hunk
+    ,hu - undo stage hunk
 
-    gd - go to definition
-    gy - go to definition of value's type
-    gi - go to implementations of interface or method
-    gr - go to references
+    # from vim-test
+    ,tn - test nearest
+    ,tf - test file
+    ,ts - test suite
+    ,tl - test last ran
+    ,tg - go to the last run test
+
+    # completion (TODO: tweak, it feels awkward)
+    <C-n> - next
+    <C-n> - previous
+    <C-y> - accept selected completion
 
   insert mode:
     jk - <esc>
