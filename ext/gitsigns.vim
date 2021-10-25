@@ -6,7 +6,6 @@ set signcolumn=yes
 " is set to a group that already exists via the theme it works fine
 lua <<EOF
 require('gitsigns').setup {
-  debug_mode = true,
   signs = {
     add          = {hl = 'GitGutterAdd'   , text = '│', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
     change       = {hl = 'GitGutterChange', text = '│', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
