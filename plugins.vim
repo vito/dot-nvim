@@ -29,6 +29,7 @@ if !exists('g:vscode')
   Plug 'vito/booklit.vim'
   Plug 'alunny/pegjs-vim'
   Plug 'tmux-plugins/vim-tmux'
+  Plug 'vito/bass.vim'
 
   " irrelevant
   Plug 'Olical/vim-enmasse'

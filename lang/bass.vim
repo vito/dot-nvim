@@ -6,7 +6,7 @@ configs.bass = {
   default_config = {
     cmd = { 'bass-lsp' },
     root_dir = util.root_pattern('.git'),
-    filetypes = { 'clojure' }
+    filetypes = { 'bass' }
   },
 
   docs = {
@@ -14,5 +14,3 @@ configs.bass = {
   },
 };
 EOF
-
-autocmd! BufEnter *.bass setlocal ft=clojure lispwords+=job,def,op,defop,defn,defcmd,provide
