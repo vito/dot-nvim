@@ -6,7 +6,7 @@ local lspconfig = require('lspconfig')
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
+function _G.vito_lsp_on_attach(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -42,6 +42,8 @@ end
 -- https://github.com/hashicorp/terraform-ls/releases/download/v0.17.1/terraform-ls_0.17.1_linux_amd64.zip
 local servers = { "gopls", "cssls", "dockerls", "elmls", "html", "terraformls", "yamlls", "bass", "sorbet" }
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup { on_attach = on_attach }
+  lspconfig[lsp].setup {
+    on_attach = _G.vito_lsp_on_attach
+  }
 end
 EOF
