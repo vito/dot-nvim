@@ -61,6 +61,10 @@ nmap <BS> <C-w>h
 nmap j gj
 nmap k gk
 
+" more intuitive split directions
+set splitright
+set splitbelow
+
 " don't insert two spaces after ., ?, or ! when gq'ing
 set nojoinspaces
 
