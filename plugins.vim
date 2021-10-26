@@ -60,4 +60,9 @@ if !exists('g:vscode')
   Plug 'jbyuki/instant.nvim'
 end
 
+" source local config if any
+if !empty(glob("~/.nvimrc-plugins.local"))
+  source ~/.nvimrc-plugins.local
+end
+
 call plug#end()
