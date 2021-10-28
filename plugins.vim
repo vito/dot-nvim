@@ -38,14 +38,13 @@ if !exists('g:vscode')
   Plug 'tpope/vim-rhubarb'
   Plug 'tpope/vim-unimpaired'
   Plug 'tpope/vim-vinegar'
-  Plug 'jremmen/vim-ripgrep'
   Plug 'pbrisbin/vim-mkdir'
   Plug 'voldikss/vim-floaterm'
   Plug 'vim-test/vim-test'
 
   " doesn't work
-  Plug 'nvim-telescope/telescope.nvim'
-  Plug 'nvim-lua/plenary.nvim' " dependency
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
   Plug 'reedes/vim-wordy'
 
   " redundant
