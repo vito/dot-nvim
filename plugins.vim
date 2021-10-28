@@ -9,7 +9,7 @@ Plug 'tpope/vim-endwise'
 if !exists('g:vscode')
   " editor UI
   Plug 'mbbill/undotree'
-  Plug 'lewis6991/gitsigns.nvim'
+  Plug 'mhinz/vim-signify'
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'iamcco/markdown-preview.nvim'
   Plug 'vito/base16-vim'
