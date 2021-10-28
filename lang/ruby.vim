@@ -12,3 +12,6 @@ configs.sorbet = {
 EOF
 
 autocmd! BufEnter *.rbi setlocal ft=ruby
+
+" don't insert comment when adding a line below a comment
+autocmd! BufEnter *.rb setlocal formatoptions-=o
