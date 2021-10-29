@@ -12,8 +12,13 @@ if !exists('g:vscode')
   Plug 'mhinz/vim-signify'
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'iamcco/markdown-preview.nvim'
-  Plug 'vito/base16-vim'
   Plug 'norcalli/nvim-colorizer.lua'
+
+  " color schemes
+  Plug 'vito/base16-vim'
+  Plug 'folke/tokyonight.nvim'
+  Plug 'rose-pine/neovim'
+  Plug 'whatyouhide/vim-gotham'
 
   " syntax
   Plug 'stephpy/vim-yaml'
