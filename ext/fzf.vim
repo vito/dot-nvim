@@ -17,3 +17,11 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+" rg with flags (no shellescape)
+"
+" ex. :Rgf --glob="*.rb" -- blah blah
+command! -bang -nargs=* Rgf
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.<q-args>, 1,
+  \   fzf#vim#with_preview(), <bang>0)
