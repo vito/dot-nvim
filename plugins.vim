@@ -59,6 +59,7 @@ if !exists('g:vscode')
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/nvim-cmp'
   Plug 'nvim-treesitter/nvim-treesitter'
+  Plug 'nvim-treesitter/nvim-treesitter-textobjects'
   Plug 'ntpeters/vim-better-whitespace'
 
   " poor man's VSCode Live Share
