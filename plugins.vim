@@ -12,7 +12,7 @@ if !exists('g:vscode')
   Plug 'mbbill/undotree'
   Plug 'mhinz/vim-signify'
   Plug 'nvim-lualine/lualine.nvim'
-  Plug 'iamcco/markdown-preview.nvim'
+  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
   Plug 'norcalli/nvim-colorizer.lua'
 
   " color schemes
