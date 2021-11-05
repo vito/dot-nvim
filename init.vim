@@ -37,13 +37,14 @@ endif
 " ignore binary files
 set wildignore+=*.a
 
+
 " escape with smashing j and k; easier to press quickly on slow systems
 imap jk <esc>
 imap kj <esc>
 
 " save on enter
 if !exists('g:vscode')
-  nmap <cr> :w<cr>
+  nnoremap <expr> <CR> &buftype ==# 'quickfix' ? '\<CR>' : ':w<CR>'
 endif
 
 " clear highlights on space
