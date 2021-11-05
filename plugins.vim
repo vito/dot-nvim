@@ -62,8 +62,8 @@ if !exists('g:vscode')
   Plug 'nvim-treesitter/nvim-treesitter-textobjects'
   Plug 'ntpeters/vim-better-whitespace'
 
-  " poor man's VSCode Live Share
-  Plug 'jbyuki/instant.nvim'
+  " https://github.com/gfanto/fzf-lsp.nvim/issues/19
+  Plug 'gfanto/fzf-lsp.nvim', { 'commit': '8ffc845bdd546ff3a6f5d90096a52542a1463de0' }
 end
 
 " source local config if any

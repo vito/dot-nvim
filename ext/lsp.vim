@@ -46,4 +46,6 @@ for _, lsp in ipairs(servers) do
     on_attach = _G.vito_lsp_on_attach
   }
 end
+
+require'fzf_lsp'.setup()
 EOF
