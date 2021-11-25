@@ -47,6 +47,16 @@ if !exists('g:vscode')
   nnoremap <expr> <CR> &buftype ==# 'quickfix' ? '\<CR>' : ':w<CR>'
 endif
 
+" keep selected text selected when fixing indentation
+vnoremap < <gv
+vnoremap > >gv
+
+" make the cursor easy to find (e.g. with a ton of splits)
+"
+" note: at one point i disabled this for performance reasons, but maybe it's
+" fine now
+set cursorline
+
 " clear highlights on space
 nmap <space> :noh<cr>
 
