@@ -34,9 +34,7 @@ imap jk <esc>
 imap kj <esc>
 
 " save on enter
-if !exists('g:vscode')
-  nnoremap <expr> <CR> &buftype ==# 'quickfix' ? '\<CR>' : ':w<CR>'
-endif
+nnoremap <expr> <CR> &buftype ==# 'quickfix' ? '\<CR>' : ':w<CR>'
 
 " keep selected text selected when fixing indentation
 vnoremap < <gv
@@ -73,13 +71,11 @@ set foldlevelstart=99
 " set a file for spellwords
 set spellfile=~/.config/nvim/spell.utf-8.add
 
-if !exists('g:vscode')
-  " load language-specific configuration
-  runtime! lang/*.vim
+" load language-specific configuration
+runtime! lang/*.vim
 
-  " load plugin-centric config
-  runtime! ext/*.vim
-endif
+" load plugin-centric config
+runtime! ext/*.vim
 
 " source local config if any
 if !empty(glob("~/.nvimrc.local"))
