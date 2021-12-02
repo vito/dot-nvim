@@ -24,19 +24,10 @@ set softtabstop=2
 " enable line number gutter
 set number
 
-" place swap files somewhere more sane
-set directory=~/.vim-tmp,~/tmp,/var/tmp,/tmp
-set backupdir=~/.vim-tmp,~/tmp,/var/tmp,/tmp
-
 " undo persists across sessions
 if has('persistent_undo')
   set undofile
-  set undodir=~/.config/nvim/.undo
 endif
-
-" ignore binary files
-set wildignore+=*.a
-
 
 " escape with smashing j and k; easier to press quickly on slow systems
 imap jk <esc>
@@ -75,9 +66,6 @@ nmap k gk
 " more intuitive split directions
 set splitright
 set splitbelow
-
-" don't insert two spaces after ., ?, or ! when gq'ing
-set nojoinspaces
 
 " don't auto-fold
 set foldlevelstart=99
