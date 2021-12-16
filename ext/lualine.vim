@@ -1,7 +1,7 @@
 lua <<EOF
 require('lualine').setup {
   sections = {
-    lualine_b = {'branch', 'diff', {'diagnostics', sources={'nvim_lsp', 'ale'}}},
+    lualine_b = {'diff', {'diagnostics', sources={'nvim_diagnostic', 'ale'}}},
     lualine_c = {
       {
         'filename',
