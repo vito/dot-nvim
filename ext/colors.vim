@@ -2,7 +2,6 @@
 " guifg to hex values
 set termguicolors
 
-set background=dark
 colorscheme tokyonight
 
 lua <<EOF
@@ -45,31 +44,31 @@ local base16_colors = {
   base0F = '#' .. vim.g.base16_gui0F, -- brown
 }
 
-local theme = {
+local base16 = {
   normal = {
-    a = { fg = colors.base00, bg = colors.base0B, gui = 'bold' },
-    b = { fg = colors.base05, bg = colors.base02 },
-    c = { fg = colors.base04, bg = colors.base01 },
+    a = { fg = base16_colors.base00, bg = base16_colors.base0B, gui = 'bold' },
+    b = { fg = base16_colors.base05, bg = base16_colors.base02 },
+    c = { fg = base16_colors.base04, bg = base16_colors.base01 },
   },
   insert = {
-    a = { fg = colors.base00, bg = colors.base08, gui = 'bold' },
-    b = { fg = colors.base05, bg = colors.base02 },
-    c = { fg = colors.base04, bg = colors.base01 },
+    a = { fg = base16_colors.base00, bg = base16_colors.base08, gui = 'bold' },
+    b = { fg = base16_colors.base05, bg = base16_colors.base02 },
+    c = { fg = base16_colors.base04, bg = base16_colors.base01 },
   },
   visual = {
-    a = { fg = colors.base00, bg = colors.base09, gui = 'bold' },
-    b = { fg = colors.base05, bg = colors.base02 },
-    c = { fg = colors.base04, bg = colors.base01 },
+    a = { fg = base16_colors.base00, bg = base16_colors.base09, gui = 'bold' },
+    b = { fg = base16_colors.base05, bg = base16_colors.base02 },
+    c = { fg = base16_colors.base04, bg = base16_colors.base01 },
   },
   replace = {
-    a = { fg = colors.base00, bg = colors.base08, gui = 'bold' },
-    b = { fg = colors.base05, bg = colors.base02 },
-    c = { fg = colors.base04, bg = colors.base01 },
+    a = { fg = base16_colors.base00, bg = base16_colors.base08, gui = 'bold' },
+    b = { fg = base16_colors.base05, bg = base16_colors.base02 },
+    c = { fg = base16_colors.base04, bg = base16_colors.base01 },
   },
   inactive = {
-    a = { fg = colors.base04, bg = colors.base01, gui = 'bold' },
-    b = { fg = colors.base05, bg = colors.base02 },
-    c = { fg = colors.base04, bg = colors.base01 },
+    a = { fg = base16_colors.base04, bg = base16_colors.base01, gui = 'bold' },
+    b = { fg = base16_colors.base05, bg = base16_colors.base02 },
+    c = { fg = base16_colors.base04, bg = base16_colors.base01 },
   },
 }
 
