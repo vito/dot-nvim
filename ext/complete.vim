@@ -17,6 +17,7 @@ cmp.setup({
   experimental = {
     ghost_text = true
   },
+  preselect = cmp.PreselectMode.None,
 
   -- adapted from https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings
   mapping = {
