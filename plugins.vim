@@ -36,7 +36,6 @@ Plug 'vito/booklit.vim'
 Plug 'alunny/pegjs-vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'vito/bass.vim'
-Plug 'reedes/vim-wordy'
 
 " utility belt
 Plug 'Olical/vim-enmasse'
