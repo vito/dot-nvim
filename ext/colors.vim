@@ -2,6 +2,11 @@
 " guifg to hex values
 set termguicolors
 
+colorscheme rose-pine
+
+" place current choice above this line
+finish
+
 colorscheme tokyonight
 
 lua <<EOF
