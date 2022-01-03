@@ -15,7 +15,8 @@ cmp.setup({
     { name = 'buffer' },
   }),
   experimental = {
-    ghost_text = true
+    ghost_text = true,
+    native_menu = true
   },
   preselect = cmp.PreselectMode.None,
 
