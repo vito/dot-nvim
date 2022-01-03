@@ -2,14 +2,16 @@
 " guifg to hex values
 set termguicolors
 
-colorscheme rose-pine
+if !exists("g:use_base16")
+  " set by ~/.nvimrc.local
+  colorscheme rose-pine
 
-" place current choice above this line
-finish
+  " place current choice above this line
+  finish
 
-colorscheme tokyonight
+  colorscheme tokyonight
 
-lua <<EOF
+  lua <<EOF
 vim.g.tokyonight_lualine_bold = true
 
 require('lualine').setup {
@@ -19,9 +21,10 @@ require('lualine').setup {
 }
 EOF
 
-" base16 config follows; not using it anymore since there's a more appropriate
-" theme plugin, but don't want to just comment it all out, so just bail
-finish
+  " base16 config follows; not using it anymore since there's a more appropriate
+  " theme plugin, but don't want to just comment it all out, so just bail
+  finish
+endif
 
 " set colors to match base16-shell
 if filereadable(expand("~/.vimrc_background"))

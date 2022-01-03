@@ -81,3 +81,6 @@ runtime! ext/*.vim
 if !empty(glob("~/.nvimrc.local"))
   source ~/.nvimrc.local
 end
+
+" load color config
+runtime! colors.vim
