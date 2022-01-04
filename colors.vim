@@ -2,8 +2,14 @@
 " guifg to hex values
 set termguicolors
 
-if !exists("g:use_base16")
-  " set by ~/.nvimrc.local
+function! SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
+if !exists("g:use_base16") " set in ~/.nvimrc.local
   colorscheme rose-pine
 
   " place current choice above this line
