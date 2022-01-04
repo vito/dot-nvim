@@ -59,6 +59,8 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'gfanto/fzf-lsp.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'petertriho/cmp-git'
 
 " source local config if any
 if !empty(glob("~/.nvimrc-plugins.local"))
