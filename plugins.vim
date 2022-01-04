@@ -12,7 +12,7 @@ Plug 'andymass/vim-matchup'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-signify'
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'ntpeters/vim-better-whitespace'
 
