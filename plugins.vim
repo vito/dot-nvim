@@ -52,6 +52,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'vim-test/vim-test'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'kazhala/close-buffers.nvim'
 
 " lsp and friends
 Plug 'neovim/nvim-lspconfig'
