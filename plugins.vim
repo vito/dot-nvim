@@ -23,6 +23,7 @@ Plug 'rose-pine/neovim'
 Plug 'whatyouhide/vim-gotham'
 
 " syntax
+Plug 'fatih/vim-go'
 Plug 'stephpy/vim-yaml'
 Plug 'dag/vim-fish'
 Plug 'andys8/vim-elm-syntax'
