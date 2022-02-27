@@ -19,8 +19,10 @@ cmp.setup({
     { name = 'buffer' },
   }),
   experimental = {
-    ghost_text = true,
-    native_menu = true
+    ghost_text = true
+  },
+  view = {
+    entries = 'native'
   },
   preselect = cmp.PreselectMode.None,
 
