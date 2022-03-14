@@ -92,3 +92,6 @@ require('lualine').setup {
   }
 }
 EOF
+
+" annoying!
+hi DiagnosticUnderlineWarn none
