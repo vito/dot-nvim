@@ -13,7 +13,6 @@ set sidescrolloff=5
 
 " always assume bash when executing stuff
 set shell=/bin/bash
-let $SHELL="/bin/bash"
 
 " 2 spaces for tabs
 set expandtab
