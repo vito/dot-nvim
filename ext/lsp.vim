@@ -37,7 +37,7 @@ end
 -- map buffer local keybindings when the language server attaches
 -- yarn global add vscode-css-languageserver-bin dockerfile-language-server-nodejs elm elm-test elm-format @elm-tooling/elm-language-server vscode-html-languageserver-bin yaml-language-server typescript typescript-language-server
 -- https://github.com/hashicorp/terraform-ls/releases/download/v0.17.1/terraform-ls_0.17.1_linux_amd64.zip
-local servers = { "gopls", "cssls", "dockerls", "elmls", "html", "terraformls", "yamlls", "bass", "sorbet", "tsserver" }
+local servers = { "gopls", "cssls", "dockerls", "elmls", "html", "terraformls", "yamlls", "bass", "sorbet", "tsserver", "rnix" }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = _G.vito_lsp_on_attach
