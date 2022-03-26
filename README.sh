@@ -4,7 +4,7 @@
 git clone https://github.com/vito/dot-nvim.git ~/.config/nvim
 
 # step 2
-vim +PlugInstall
+nvim +PlugInstall
 
 cat <<EOF
 cheatsheet:
