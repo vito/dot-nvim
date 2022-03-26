@@ -74,6 +74,9 @@ set spellfile=~/.config/nvim/spell.utf-8.add
 " load language-specific configuration
 runtime! lang/*.vim
 
+" load color config
+runtime! colors.vim
+
 " load plugin-centric config
 runtime! ext/*.vim
 
@@ -81,6 +84,3 @@ runtime! ext/*.vim
 if !empty(glob("~/.nvimrc.local"))
   source ~/.nvimrc.local
 end
-
-" load color config
-runtime! colors.vim

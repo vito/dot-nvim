@@ -21,6 +21,7 @@ Plug 'vito/base16-vim'
 Plug 'folke/tokyonight.nvim'
 Plug 'rose-pine/neovim'
 Plug 'whatyouhide/vim-gotham'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 
 " syntax
 Plug 'fatih/vim-go'

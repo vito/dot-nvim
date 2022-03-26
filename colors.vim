@@ -9,11 +9,14 @@ function! SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
-if !exists("g:use_base16") " set in ~/.nvimrc.local
-  colorscheme rose-pine
+" set this in ~/.nvimrc.local
+if !exists("g:use_base16")
+  colorscheme catppuccin
 
   " place current choice above this line
   finish
+
+  colorscheme rose-pine
 
   colorscheme tokyonight
 
