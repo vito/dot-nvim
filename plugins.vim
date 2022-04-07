@@ -10,7 +10,7 @@ Plug 'andymass/vim-matchup'
 
 " editor UI
 Plug 'mbbill/undotree'
-Plug 'mhinz/vim-signify'
+Plug 'tanvirtin/vgit.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'norcalli/nvim-colorizer.lua'
