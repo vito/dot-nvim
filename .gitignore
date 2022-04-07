@@ -5,3 +5,4 @@ spell
 !.undo/.gitkeep
 .init.vim-rplugin~
 spell.utf-8.add*
+Session.vim
