@@ -34,11 +34,21 @@ cheatsheet:
     # floaterm
     <C-t> - toggle floaterm (assumes fish shell)
 
-    # from gitsigns
-    [c  - previous hunk
-    ]c  - next hunk
-    ,hs - stage hunk
-    ,hu - undo stage hunk
+    # vgit
+    [g  - previous hunk
+    ]g  - next hunk
+    ,gs - buffer hunk stage
+    ,gr - buffer hunk reset
+    ,gp - buffer hunk preview
+    ,gb - buffer blame preview
+    ,gf - buffer diff preview
+    ,gh - buffer history preview
+    ,gu - buffer reset
+    ,gg - buffer gutter blame preview
+    ,gl - project hunks preview
+    ,gd - project diff preview
+    ,gq - project hunks qf
+    ,gx - toggle diff preference
 
     # from vim-test
     ,tn - test nearest
