@@ -5,8 +5,8 @@ vim.wo.signcolumn = 'yes'
 
 require('vgit').setup({
   keymaps = {
-    ['n ]g'] = 'hunk_up',
-    ['n [g'] = 'hunk_down',
+    ['n [g'] = 'hunk_up',
+    ['n ]g'] = 'hunk_down',
     ['n <leader>gs'] = 'buffer_hunk_stage',
     ['n <leader>gr'] = 'buffer_hunk_reset',
     ['n <leader>gp'] = 'buffer_hunk_preview',
