@@ -18,8 +18,7 @@ require('lualine').setup {
     }
   },
   options = {
-    icons_enabled = false,
-    globalstatus = true
+    icons_enabled = false
   }
 }
 EOF
