@@ -22,6 +22,12 @@ Plug 'folke/tokyonight.nvim'
 Plug 'rose-pine/neovim'
 Plug 'whatyouhide/vim-gotham'
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+Plug 'fcpg/vim-farout'
+Plug 'fcpg/vim-orbital'
+Plug 'fcpg/vim-fahrenheit'
+Plug 'ahmedabdulrahman/aylin.vim'
+Plug 'cseelus/vim-colors-tone'
+Plug 'yuttie/inkstained-vim'
 
 " syntax
 Plug 'fatih/vim-go'
