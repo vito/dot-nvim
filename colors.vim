@@ -11,14 +11,13 @@ endfunc
 
 " set this in ~/.nvimrc.local
 if !exists("g:use_base16")
-  colorscheme catppuccin
+  set background=light
+  colorscheme rose-pine
+  "
+  " colorscheme farout
 
   " place current choice above this line
   finish
-
-  colorscheme rose-pine
-
-  colorscheme tokyonight
 
   lua <<EOF
 vim.g.tokyonight_lualine_bold = true
