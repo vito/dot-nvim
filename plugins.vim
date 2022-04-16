@@ -6,7 +6,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-obsession'
-Plug 'andymass/vim-matchup'
+" Plug 'andymass/vim-matchup'
 
 " editor UI
 Plug 'mbbill/undotree'
