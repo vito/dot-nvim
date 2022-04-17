@@ -1,4 +1,4 @@
-set completeopt=menu,menuone,noselect,noinsert
+set completeopt=menu,menuone,noselect
 
 lua <<EOF
 local cmp = require('cmp')
@@ -64,10 +64,14 @@ cmp.setup({
   -- the preselected one will be at the top
   preselect = cmp.PreselectMode.None,
 
-  -- adapted from https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings
-  mapping = {
+  mapping = cmp.mapping.preset.insert({
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<CR>'] = cmp.mapping.confirm({ select = false }),
     ['<Tab>'] = function(fallback)
-      if not cmp.select_next_item() then
+      if not cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert }) then
         if vim.bo.buftype ~= 'prompt' and has_words_before() then
           cmp.complete()
         else
@@ -75,9 +79,8 @@ cmp.setup({
         end
       end
     end,
-
     ['<S-Tab>'] = function(fallback)
-      if not cmp.select_prev_item() then
+      if not cmp.select_prev_item({ behavior = cmp.SelectBehavior.Insert }) then
         if vim.bo.buftype ~= 'prompt' and has_words_before() then
           cmp.complete()
         else
@@ -85,7 +88,7 @@ cmp.setup({
         end
       end
     end,
-  },
+  }),
 })
 
 cmp.setup.filetype('gitcommit', {
