@@ -62,21 +62,15 @@ Plug 'junegunn/fzf.vim'
 Plug 'kazhala/close-buffers.nvim'
 
 " lsp and friends
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/nvim-cmp'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-emoji'
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'petertriho/cmp-git'
+Plug 'hrsh7th/nvim-cmp'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'gfanto/fzf-lsp.nvim'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'petertriho/cmp-git'
 
 " source local config if any
 if !empty(glob("~/.nvimrc-plugins.local"))
