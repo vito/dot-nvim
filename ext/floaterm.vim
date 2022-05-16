@@ -6,5 +6,3 @@ tnoremap <silent> <C-t> <C-\><C-n>:FloatermToggle<CR>
 let g:floaterm_borderchars='─│─│╭╮╯╰'
 
 highlight! link FloatermBorder Comment
-
-autocmd FileType floaterm setlocal winblend=10
