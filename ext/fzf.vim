@@ -14,6 +14,7 @@ let g:fzf_action = {
 nnoremap <leader>ff <cmd>Files<cr>
 nnoremap <leader>fg <cmd>Rg<cr>
 nnoremap <leader>fb <cmd>Buffers<cr>
+nnoremap <leader>fG <cmd>GFiles<cr>
 nnoremap <leader>fh <cmd>Tags<cr>
 
 let g:fzf_colors =
