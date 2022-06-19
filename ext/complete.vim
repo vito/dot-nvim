@@ -18,9 +18,9 @@ cmp.setup({
   }, {
     { name = 'buffer' },
   }),
-  experimental = {
-    ghost_text = true
-  },
+  -- experimental = {
+  --   ghost_text = true
+  -- },
   view = {
     entries = 'native'
   },
@@ -28,7 +28,7 @@ cmp.setup({
 
   -- adapted from https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings
   mapping = {
-    ['<Tab>'] = function(fallback)
+    ['<Ctrl-Tab>'] = function(fallback)
       if not cmp.select_next_item() then
         if vim.bo.buftype ~= 'prompt' and has_words_before() then
           cmp.complete()
