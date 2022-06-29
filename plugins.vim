@@ -15,6 +15,7 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'folke/which-key.nvim'
 
 " color schemes
 Plug 'vito/base16-vim'
