@@ -13,6 +13,6 @@ endfunc
 if !empty(glob("~/.nvimrc-colors.local"))
   source ~/.nvimrc-colors.local
 else
-  set background=light
+  set background=dark
   colorscheme rose-pine
 endif
