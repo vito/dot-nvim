@@ -15,7 +15,7 @@ Plug 'github/copilot.vim'
 Plug 'mbbill/undotree'
 Plug 'tanvirtin/vgit.nvim'
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'iamcco/markdown-preview.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'folke/which-key.nvim'
