@@ -8,6 +8,9 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-obsession'
 " Plug 'andymass/vim-matchup'
 
+" existential crises
+Plug 'github/copilot.vim'
+
 " editor UI
 Plug 'mbbill/undotree'
 Plug 'tanvirtin/vgit.nvim'
