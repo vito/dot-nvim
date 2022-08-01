@@ -1,5 +1,4 @@
 if !empty($WSL_DISTRO_NAME)
-  set clipboard+=unnamedplus
   let g:clipboard = {
             \   'name': 'win32yank-wsl',
             \   'copy': {
