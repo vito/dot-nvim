@@ -1,7 +1,5 @@
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all",
-  ignore_install = { "phpdoc" }, -- no arm64
   highlight = {
     enable = true,
   },
