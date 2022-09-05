@@ -12,7 +12,7 @@ set scrolloff=1
 set sidescrolloff=5
 
 " always assume bash when executing stuff
-set shell=/bin/bash
+set shell=/usr/bin/env\ bash
 
 " 2 spaces for tabs
 set expandtab
