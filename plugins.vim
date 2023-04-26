@@ -12,8 +12,8 @@ Plug 'tpope/vim-obsession'
 Plug 'github/copilot.vim'
 
 " editor UI
+Plug 'airblade/vim-gitgutter'
 Plug 'mbbill/undotree'
-Plug 'tanvirtin/vgit.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'iamcco/markdown-preview.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
