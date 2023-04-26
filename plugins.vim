@@ -19,6 +19,7 @@ Plug 'iamcco/markdown-preview.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'folke/which-key.nvim'
+Plug 'RRethy/nvim-treesitter-textsubjects'
 
 " color schemes
 Plug 'vito/base16-vim'
