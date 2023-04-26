@@ -5,8 +5,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-obsession'
-" Plug 'andymass/vim-matchup'
 
 " existential crises
 Plug 'github/copilot.vim'
@@ -52,21 +52,27 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'vito/bass.vim'
 Plug 'reedes/vim-wordy'
 
+" svelte syntax
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
+
 " utility belt
-Plug 'Olical/vim-enmasse'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-vinegar'
+Plug 'kazhala/close-buffers.nvim'
 Plug 'pbrisbin/vim-mkdir'
+Plug 'Olical/vim-enmasse'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-vinegar'
 Plug 'voldikss/vim-floaterm'
 Plug 'vim-test/vim-test'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'kazhala/close-buffers.nvim'
 
 " lsp and friends
+Plug 'nvim-lua/plenary.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -75,7 +81,6 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/playground'
 Plug 'gfanto/fzf-lsp.nvim'
-Plug 'nvim-lua/plenary.nvim'
 Plug 'petertriho/cmp-git'
 
 " source local config if any
