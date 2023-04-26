@@ -32,6 +32,8 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
+
 " rg with flags (no shellescape)
 "
 " ex. :Rgf --glob="*.rb" -- blah blah
