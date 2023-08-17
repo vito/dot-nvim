@@ -7,6 +7,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-obsession'
+Plug 'ojroques/nvim-osc52' " remote copy/paste
 
 " existential crises
 Plug 'github/copilot.vim'
