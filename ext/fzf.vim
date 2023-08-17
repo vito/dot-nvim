@@ -17,6 +17,8 @@ nnoremap <leader>fb <cmd>Buffers<cr>
 nnoremap <leader>fG <cmd>GFiles<cr>
 nnoremap <leader>fh <cmd>Tags<cr>
 
+let g:fzf_preview_window = ['down,40%', 'ctrl-/']
+
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
