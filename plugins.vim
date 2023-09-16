@@ -52,11 +52,7 @@ Plug 'alunny/pegjs-vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'vito/bass.vim'
 Plug 'reedes/vim-wordy'
-
-" svelte syntax
-Plug 'othree/html5.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'evanleck/vim-svelte', {'branch': 'main'}
+Plug 'joerdav/templ.vim'
 
 " utility belt
 Plug 'tpope/vim-eunuch'
