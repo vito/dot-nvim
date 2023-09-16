@@ -69,6 +69,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'vim-test/vim-test'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'sbdchd/neoformat'
 
 " lsp and friends
 Plug 'nvim-lua/plenary.nvim'
