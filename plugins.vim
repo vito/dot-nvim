@@ -34,6 +34,8 @@ Plug 'fcpg/vim-fahrenheit'
 Plug 'ahmedabdulrahman/aylin.vim'
 Plug 'cseelus/vim-colors-tone'
 Plug 'yuttie/inkstained-vim'
+Plug 'cocopon/iceberg.vim'
+Plug 'rebelot/kanagawa.nvim'
 
 " syntax
 Plug 'fatih/vim-go'
