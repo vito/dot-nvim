@@ -20,10 +20,10 @@
 -- reading. Consider preserving this or remove `-- stylua` lines to autoformat.
 
 -- General ====================================================================
-vim.g.mapleader = ' ' -- Use `<Space>` as <Leader> key
+vim.g.mapleader = ',' -- Use `,` as <Leader> key
 
 vim.o.mouse       = 'a'            -- Enable mouse
-vim.o.mousescroll = 'ver:25,hor:6' -- Customize mouse scroll
+vim.o.mousescroll = 'ver:3,hor:6'  -- Customize mouse scroll
 vim.o.switchbuf   = 'usetab'       -- Use already opened buffers when switching
 vim.o.undofile    = true           -- Enable persistent undo
 
