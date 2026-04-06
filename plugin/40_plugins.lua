@@ -104,7 +104,10 @@ now_if_args(function()
       table.insert(filetypes, ft)
     end
   end
-  local ts_start = function(ev) vim.treesitter.start(ev.buf) end
+  local ts_start = function(ev)
+    vim.treesitter.start(ev.buf)
+    vim.bo[ev.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+  end
   Config.new_autocmd('FileType', filetypes, ts_start, 'Start tree-sitter')
 end)
 
