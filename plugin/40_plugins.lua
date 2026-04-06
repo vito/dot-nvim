@@ -159,6 +159,29 @@ now_if_args(function()
   require("mason-lspconfig").setup()
 end)
 
+-- Menu ========================================================================
+
+-- Context menu UI for Neovim with nested menu support.
+-- Uses 'nvzone/volt' (already installed) as its UI framework.
+-- Example usage:
+-- - `<C-m>` - open menu via keyboard
+-- - `<RightMouse>` - open menu via right-click
+later(function()
+  add({ 'https://github.com/nvzone/menu' })
+
+  -- Keyboard users
+  vim.keymap.set('n', '<C-m>', function()
+    require('menu').open('default')
+  end, { desc = 'Open menu' })
+
+  -- Mouse users
+  vim.keymap.set({ 'n', 'v' }, '<RightMouse>', function()
+    require('menu.utils').delete_old_menus()
+    vim.cmd.exec('"normal! \\<RightMouse>"')
+    require('menu').open('default', { mouse = true })
+  end, { desc = 'Open context menu' })
+end)
+
 -- Floating terminal ===========================================================
 
 -- Floating terminal window with sidebar for managing multiple terminals.

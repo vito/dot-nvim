@@ -13,3 +13,5 @@ end)
 vim.keymap.set("n", "<C-->", function()
   change_scale_factor(1/1.25)
 end)
+
+vim.g.neovide_floating_corner_radius = 0.5
