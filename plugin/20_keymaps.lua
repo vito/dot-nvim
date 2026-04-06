@@ -29,6 +29,17 @@ nmap('<Space>', '<Cmd>nohlsearch<CR>', 'Clear search highlight')
 vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Exit insert mode' })
 vim.keymap.set('i', 'kj', '<Esc>', { desc = 'Exit insert mode' })
 
+-- Copy to system clipboard with Ctrl+Shift+C
+vim.keymap.set('v', '<C-S-c>', '"+y', { desc = 'Copy to clipboard' })
+
+-- Paste from system clipboard with Ctrl+Shift+V
+vim.keymap.set('n', '<C-S-v>', '"+p', { desc = 'Paste from clipboard' })
+vim.keymap.set('i', '<C-S-v>', '<C-r>+', { desc = 'Paste from clipboard' })
+vim.keymap.set('v', '<C-S-v>', '"+s', { desc = 'Replace selection from clipboard' })
+vim.keymap.set('t', '<C-S-v>', function()
+  vim.fn.chansend(vim.bo.channel, vim.fn.getreg('+'))
+end, { desc = 'Paste from clipboard' })
+
 -- Many general mappings are created by 'mini.basics'. See 'plugin/30_mini.lua'
 
 -- stylua: ignore start
