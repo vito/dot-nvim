@@ -263,3 +263,26 @@ Config.now(function()
   add({ 'https://github.com/rose-pine/neovim' })
   vim.cmd('color rose-pine')
 end)
+
+-- Git permalinks ==============================================================
+
+-- Generate shareable git permalinks with line ranges. Default mapping:
+-- - `<Leader>gy` (normal/visual) - copy permalink to clipboard
+later(function()
+  add({
+    'https://github.com/nvim-lua/plenary.nvim',
+    'https://github.com/ruifm/gitlinker.nvim',
+  })
+  require('gitlinker').setup()
+end)
+
+-- Git signs & inline blame ====================================================
+
+-- Sign column indicators for git hunks, inline blame, and hunk actions.
+-- Note: sign column overlaps with mini.diff; disable one if they conflict.
+later(function()
+  add({ 'https://github.com/lewis6991/gitsigns.nvim' })
+  require('gitsigns').setup({
+    current_line_blame = true,
+  })
+end)
