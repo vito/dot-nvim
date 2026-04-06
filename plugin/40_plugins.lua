@@ -159,6 +159,47 @@ now_if_args(function()
   require("mason-lspconfig").setup()
 end)
 
+-- Floating terminal ===========================================================
+
+-- Floating terminal window with sidebar for managing multiple terminals.
+-- Uses 'nvzone/volt' as its UI framework.
+-- Example usage:
+-- - `<C-t>` - toggle floating terminal from anywhere
+-- - Inside terminal sidebar: `a` to add, `d` to delete, `e` to rename
+later(function()
+  add({
+    'https://github.com/nvzone/volt',
+    'https://github.com/nvzone/floaterm',
+  })
+
+  require('floaterm').setup({
+    mappings = {
+      term = function(buf)
+        -- Override volt's <Esc> close: return to terminal mode instead
+        vim.keymap.set('n', '<Esc>', 'i', { buffer = buf, desc = 'Return to terminal mode' })
+        -- Override volt's <C-t> cycle: toggle floaterm instead
+        vim.keymap.set('n', '<C-t>', '<Cmd>FloatermToggle<CR>', { buffer = buf, desc = 'Toggle floating terminal' })
+      end,
+      sidebar = function(buf)
+        -- Override volt's <Esc> close: switch to terminal and enter insert mode
+        vim.keymap.set('n', '<Esc>', function()
+          require('floaterm.api').switch_wins()
+          vim.cmd.startinsert()
+        end, { buffer = buf, desc = 'Switch to terminal' })
+        -- Override volt's <C-t> cycle: toggle floaterm instead
+        vim.keymap.set('n', '<C-t>', '<Cmd>FloatermToggle<CR>', { buffer = buf, desc = 'Toggle floating terminal' })
+        -- Quick way to enter terminal from sidebar
+        vim.keymap.set('n', 'i', function()
+          require('floaterm.api').switch_wins()
+          vim.cmd.startinsert()
+        end, { buffer = buf, desc = 'Enter terminal' })
+      end,
+    },
+  })
+
+  vim.keymap.set({ 'n', 't' }, '<C-t>', '<Cmd>FloatermToggle<CR>', { desc = 'Toggle floating terminal' })
+end)
+
 -- Beautiful, usable, well maintained color schemes outside of 'mini.nvim' and
 -- have full support of its highlight groups. Use if you don't like 'miniwinter'
 -- enabled in 'plugin/30_mini.lua' or other suggested 'mini.hues' based ones.

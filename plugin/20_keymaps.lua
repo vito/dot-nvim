@@ -19,6 +19,16 @@ end
 nmap('[p', '<Cmd>exe "iput! " . v:register<CR>', 'Paste Above')
 nmap(']p', '<Cmd>exe "iput "  . v:register<CR>', 'Paste Below')
 
+-- Save file with Enter in Normal mode
+nmap('<CR>', '<Cmd>w<CR>', 'Save file')
+
+-- Clear search highlighting with Space
+nmap('<Space>', '<Cmd>nohlsearch<CR>', 'Clear search highlight')
+
+-- Exit Insert mode with jk / kj
+vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Exit insert mode' })
+vim.keymap.set('i', 'kj', '<Esc>', { desc = 'Exit insert mode' })
+
 -- Many general mappings are created by 'mini.basics'. See 'plugin/30_mini.lua'
 
 -- stylua: ignore start
