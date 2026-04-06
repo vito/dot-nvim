@@ -519,17 +519,9 @@ later(function() require('mini.indentscope').setup() end)
 -- - `dt)` - *d*elete *t*ill next closing parenthesis (`)`)
 later(function() require('mini.jump').setup() end)
 
--- Jump within visible lines to pre-defined spots via iterative label filtering.
--- Spots are computed by a configurable spotter function. Example usage:
--- - Lock eyes on desired location to jump
--- - `<CR>` - start jumping; this shows character labels over target spots
--- - Type character that appears over desired location; number of target spots
---   should be reduced
--- - Keep typing labels until target spot is unique to perform the jump
---
--- See also:
--- - `:h MiniJump2d.gen_spotter` - list of available spotters
-later(function() require('mini.jump2d').setup() end)
+-- 'mini.jump2d' is disabled because its default `<CR>` mapping conflicts with
+-- the `<CR>` save-file mapping in '20_keymaps.lua'.
+-- later(function() require('mini.jump2d').setup() end)
 
 -- Special key mappings. Provides helpers to map:
 -- - Multi-step actions. Apply action 1 if condition is met; else apply
