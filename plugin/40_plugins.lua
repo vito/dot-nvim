@@ -224,7 +224,7 @@ end)
 -- - Inside terminal sidebar: `a` to add, `d` to delete, `e` to rename
 later(function()
   add({
-    'https://github.com/nvzone/volt',
+    { src = 'https://github.com/vito/volt', version = 'theme-refresh-hooks' },
     { src = 'https://github.com/vito/floaterm', version = 'auto-title' },
   })
 
