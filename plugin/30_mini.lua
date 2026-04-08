@@ -832,6 +832,37 @@ later(function() require('mini.trailspace').setup() end)
 -- - `:h MiniVisits-examples` - examples of common setups
 later(function() require('mini.visits').setup() end)
 
+-- Format + organize imports on save
+vim.api.nvim_create_autocmd('BufWritePre', {
+  callback = function()
+    if vim.b.no_format_on_save then return end
+
+    -- Organize imports via code action (goimports behavior)
+    local clients = vim.lsp.get_clients({ bufnr = 0, method = 'textDocument/codeAction' })
+    if #clients > 0 then
+      local params = vim.lsp.util.make_range_params(0, clients[1].offset_encoding)
+      params.context = { only = { 'source.organizeImports' }, diagnostics = {} }
+      local result = vim.lsp.buf_request_sync(0, 'textDocument/codeAction', params, 1000)
+      for _, res in pairs(result or {}) do
+        for _, action in pairs(res.result or {}) do
+          if action.edit then
+            vim.lsp.util.apply_workspace_edit(action.edit, clients[1].offset_encoding)
+          end
+        end
+      end
+    end
+
+    vim.lsp.buf.format({ async = false })
+  end,
+})
+
+-- Save without formatting
+vim.api.nvim_create_user_command('W', function()
+  vim.b.no_format_on_save = true
+  vim.cmd('write')
+  vim.b.no_format_on_save = false
+end, { desc = 'Save without formatting' })
+
 -- Not mentioned here, but can be useful:
 -- - 'mini.doc' - needed only for plugin developers.
 -- - 'mini.fuzzy' - not really needed on a daily basis.
