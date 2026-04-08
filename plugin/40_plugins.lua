@@ -225,7 +225,7 @@ end)
 later(function()
   add({
     'https://github.com/nvzone/volt',
-    'https://github.com/nvzone/floaterm',
+    { src = 'https://github.com/vito/floaterm', version = 'auto-title' },
   })
 
   require('floaterm').setup({
@@ -285,4 +285,78 @@ later(function()
   require('gitsigns').setup({
     current_line_blame = true,
   })
+end)
+
+-- Copy file references ========================================================
+
+-- Copy file path and line references to clipboard.
+-- - `yr`  - copy file path
+-- - `yrr` - copy file:line (or file:line-range in visual mode)
+later(function()
+  add({ 'https://github.com/cajames/copy-reference.nvim' })
+  require('copy-reference').setup()
+  vim.keymap.set({ 'n', 'v' }, 'yr', '<Cmd>CopyReference file<CR>', { desc = 'Copy file path' })
+  vim.keymap.set({ 'n', 'v' }, 'yrr', '<Cmd>CopyReference line<CR>', { desc = 'Copy file:line reference' })
+end)
+
+-- Multicursor =================================================================
+
+-- Multiple cursors with match-based and line-based adding.
+-- - `gn`/`gu` - add cursor at next/prev match
+-- - `ga` - add cursor at all matches
+-- - Arrow up/down - add cursor above/below
+-- - `<C-LeftMouse>` - add/remove cursor by click
+later(function()
+  add({ { src = 'https://github.com/jake-stewart/multicursor.nvim', version = '1.0' } })
+
+  local mc = require('multicursor-nvim')
+  mc.setup()
+
+  local set = vim.keymap.set
+
+  -- Zed-style multicursor bindings
+  set({ 'n', 'x' }, 'gl', function() mc.matchAddCursor(1) end, { desc = 'Add cursor at next occurrence' })
+  set({ 'n', 'x' }, 'gL', function() mc.matchAddCursor(-1) end, { desc = 'Add cursor at prev occurrence' })
+  set({ 'n', 'x' }, 'g>', function() mc.matchSkipCursor(1) end, { desc = 'Skip to next occurrence' })
+  set({ 'n', 'x' }, 'g<', function() mc.matchSkipCursor(-1) end, { desc = 'Skip to prev occurrence' })
+  set({ 'n', 'x' }, 'gn', function() mc.matchAddCursor(1) end, { desc = 'Add cursor at next match' })
+  set({ 'n', 'x' }, 'gN', function() mc.matchAddCursor(-1) end, { desc = 'Add cursor at prev match' })
+  set({ 'n', 'x' }, 'ga', mc.matchAllAddCursors, { desc = 'Add cursor at all matches' })
+
+  -- Add cursors above/below
+  set({ 'n', 'x' }, '<Up>', function() mc.lineAddCursor(-1) end, { desc = 'Add cursor above' })
+  set({ 'n', 'x' }, '<Down>', function() mc.lineAddCursor(1) end, { desc = 'Add cursor below' })
+
+  -- Ctrl+click to add/remove cursors
+  set('n', '<C-LeftMouse>', mc.handleMouse, { desc = 'Add/remove cursor (click)' })
+
+  mc.addKeymapLayer(function(layerSet)
+    layerSet({ 'n', 'x' }, '<Left>', mc.prevCursor)
+    layerSet({ 'n', 'x' }, '<Right>', mc.nextCursor)
+    layerSet({ 'n', 'x' }, '<Leader>x', mc.deleteCursor)
+    layerSet('n', '<Esc>', function()
+      if not mc.cursorsEnabled() then
+        mc.enableCursors()
+      else
+        mc.clearCursors()
+      end
+    end)
+  end)
+
+  local hl = vim.api.nvim_set_hl
+  hl(0, 'MultiCursorCursor', { reverse = true })
+  hl(0, 'MultiCursorVisual', { link = 'Visual' })
+  hl(0, 'MultiCursorSign', { link = 'SignColumn' })
+  hl(0, 'MultiCursorMatchPreview', { link = 'Search' })
+  hl(0, 'MultiCursorDisabledCursor', { reverse = true })
+  hl(0, 'MultiCursorDisabledVisual', { link = 'Visual' })
+  hl(0, 'MultiCursorDisabledSign', { link = 'SignColumn' })
+end)
+
+-- Dang language support ======================================================
+
+-- Tree-sitter grammar, LSP, and filetype detection for the Dang language.
+later(function()
+  add({ 'https://github.com/vito/dang.nvim' })
+  require('dang').setup()
 end)

@@ -4,6 +4,10 @@
       "rev": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
       "src": "https://github.com/stevearc/conform.nvim"
     },
+    "copy-reference.nvim": {
+      "rev": "6b888fa9b280724f79f33c031a2105a962c2014c",
+      "src": "https://github.com/cajames/copy-reference.nvim"
+    },
     "coq.artifacts": {
       "rev": "ef5f21d638ccc456cfa5b8d0ab37093cefe48c8b",
       "src": "https://github.com/ms-jpq/coq.artifacts"
@@ -25,8 +29,9 @@
       "src": "https://github.com/dmtrKovalenko/fff.nvim"
     },
     "floaterm": {
-      "rev": "fc2efaf25eeefcb33177d5807c0c745e125cf293",
-      "src": "https://github.com/nvzone/floaterm"
+      "rev": "2799ce96b3e35a8e11df4283181a935cf9ba46dd",
+      "src": "https://github.com/vito/floaterm",
+      "version": "'auto-title'"
     },
     "friendly-snippets": {
       "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
@@ -58,7 +63,8 @@
     },
     "multicursor.nvim": {
       "rev": "704b99f10a72cc05d370cfeb294ff83412a8ab55",
-      "src": "https://github.com/jake-stewart/multicursor.nvim"
+      "src": "https://github.com/jake-stewart/multicursor.nvim",
+      "version": "'1.0'"
     },
     "neovim": {
       "rev": "cf2a288696b03d0934da713d66c6d71557b5c997",
