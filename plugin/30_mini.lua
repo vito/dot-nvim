@@ -100,7 +100,51 @@ now(function() require('mini.notify').setup() end)
 -- - `<Leader>sn` - start new session
 -- - `<Leader>sr` - read previously started session
 -- - `<Leader>sd` - delete previously started session
-now(function() require('mini.sessions').setup() end)
+now(function()
+  require('mini.sessions').setup({
+    hooks = {
+      pre = {
+        read = function()
+          -- Reset floaterm state to prevent stale buffer/window ID errors
+          local ok, state = pcall(require, 'floaterm.state')
+          if not ok then return end
+
+          -- Close any open floaterm windows
+          for _, key in ipairs({ 'win', 'barwin', 'sidewin' }) do
+            if state[key] and vim.api.nvim_win_is_valid(state[key]) then
+              vim.api.nvim_win_close(state[key], true)
+            end
+          end
+
+          -- Stop timers
+          if state.bar_redraw_timer then
+            state.bar_redraw_timer:stop()
+            state.bar_redraw_timer:close()
+            state.bar_redraw_timer = nil
+          end
+          if state.name_update_timer then
+            state.name_update_timer:stop()
+            state.name_update_timer:close()
+            state.name_update_timer = nil
+          end
+
+          -- Clear autocmd group
+          pcall(vim.api.nvim_del_augroup_by_name, 'FloatermAu')
+
+          -- Reset state so floaterm starts fresh
+          state.volt_set = false
+          state.terminals = nil
+          state.sidebuf = nil
+          state.barbuf = nil
+          state.buf = nil
+          state.win = nil
+          state.sidewin = nil
+          state.barwin = nil
+        end,
+      },
+    },
+  })
+end)
 
 -- Start screen. This is what is shown when you open Neovim like `nvim`.
 -- Example usage:
