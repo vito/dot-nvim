@@ -21,7 +21,7 @@
       "src": "https://github.com/ms-jpq/coq_nvim"
     },
     "dang.nvim": {
-      "rev": "865244941cef2e5036be19b82d71a07e37d96b67",
+      "rev": "bd366c5cbbee800bf00204a24e70ef7545a5779e",
       "src": "https://github.com/vito/dang.nvim"
     },
     "fff.nvim": {
