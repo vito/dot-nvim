@@ -356,7 +356,7 @@ end)
 -- Dang language support ======================================================
 
 -- Tree-sitter grammar, LSP, and filetype detection for the Dang language.
-later(function()
+now_if_args(function()
   add({ 'https://github.com/vito/dang.nvim' })
   require('dang').setup()
 end)

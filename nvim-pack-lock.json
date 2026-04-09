@@ -21,11 +21,11 @@
       "src": "https://github.com/ms-jpq/coq_nvim"
     },
     "dang.nvim": {
-      "rev": "19ca765ced94629a886d6cb7d457286b50d1db92",
+      "rev": "865244941cef2e5036be19b82d71a07e37d96b67",
       "src": "https://github.com/vito/dang.nvim"
     },
     "fff.nvim": {
-      "rev": "1c2c0633cdb933a9b4111d9e6dfa4a476a35ff9f",
+      "rev": "0fd47ab72dae50984af8784cb645e5cff3e12c1d",
       "src": "https://github.com/dmtrKovalenko/fff.nvim"
     },
     "floaterm": {
@@ -58,7 +58,7 @@
       "src": "https://github.com/nvzone/menu"
     },
     "mini.nvim": {
-      "rev": "2431902e78b76f435542d1e606f08475360068ca",
+      "rev": "69b7433355664cf76898eb86a12a019f39bd86d1",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "multicursor.nvim": {
@@ -67,11 +67,11 @@
       "version": "'1.0'"
     },
     "neovim": {
-      "rev": "cf2a288696b03d0934da713d66c6d71557b5c997",
+      "rev": "9504524e5ed0e326534698f637f9d038ba4cd0ee",
       "src": "https://github.com/rose-pine/neovim"
     },
     "nvim-lspconfig": {
-      "rev": "bedca8b426b2fee0ccac596d167d71bbe971253f",
+      "rev": "c588db330592fa477a70d2fee6ba20a57194bdc3",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-tree.lua": {
@@ -87,7 +87,7 @@
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
     },
     "nvim-web-devicons": {
-      "rev": "95b7a002d5dba1a42eb58f5fac5c565a485eefd0",
+      "rev": "6e76c5e47e957fbf080b1fdac165c66dbd2e7cfb",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "plenary.nvim": {
