@@ -19,8 +19,21 @@ end
 nmap('[p', '<Cmd>exe "iput! " . v:register<CR>', 'Paste Above')
 nmap(']p', '<Cmd>exe "iput "  . v:register<CR>', 'Paste Below')
 
--- Save file with Enter in Normal mode
-nmap('<CR>', '<Cmd>w<CR>', 'Save file')
+-- Save file with Enter in Normal mode; preserve native Enter in special buffers.
+local native_enter = function()
+  local count = vim.v.count > 0 and tostring(vim.v.count) or ''
+  local cr = vim.api.nvim_replace_termcodes('<CR>', true, false, true)
+  vim.cmd('normal! ' .. count .. cr)
+end
+local save_file = function()
+  if vim.bo.buftype ~= '' and vim.bo.buftype ~= 'acwrite' then
+    native_enter()
+    return
+  end
+
+  vim.cmd('write')
+end
+nmap('<CR>', save_file, 'Save file')
 
 -- Clear search highlighting with Space
 nmap('<Space>', '<Cmd>nohlsearch<CR>', 'Clear search highlight')
