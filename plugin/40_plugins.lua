@@ -290,13 +290,13 @@ end)
 -- Copy file references ========================================================
 
 -- Copy file path and line references to clipboard.
--- - `yr`  - copy file path
--- - `yrr` - copy file:line (or file:line-range in visual mode)
+-- - `<Leader>yr` - copy file path
+-- - `<Leader>yR` - copy file:line (or file:line-range in visual mode)
 later(function()
   add({ 'https://github.com/cajames/copy-reference.nvim' })
   require('copy-reference').setup()
-  vim.keymap.set({ 'n', 'v' }, 'yr', '<Cmd>CopyReference file<CR>', { desc = 'Copy file path' })
-  vim.keymap.set({ 'n', 'v' }, 'yrr', '<Cmd>CopyReference line<CR>', { desc = 'Copy file:line reference' })
+  vim.keymap.set({ 'n', 'x' }, '<Leader>yr', '<Cmd>CopyReference file<CR>', { desc = 'Copy file path' })
+  vim.keymap.set({ 'n', 'x' }, '<Leader>yR', '<Cmd>CopyReference line<CR>', { desc = 'Copy file:line reference' })
 end)
 
 -- Multicursor =================================================================
