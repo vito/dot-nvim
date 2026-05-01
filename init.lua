@@ -107,6 +107,16 @@ Config.new_autocmd = function(event, pattern, callback, desc)
   vim.api.nvim_create_autocmd(event, opts)
 end
 
+-- Show prettified current working directory in the terminal/GUI window title.
+-- Example: "/home/user/src/project" becomes "~/src/project".
+local set_window_title = function()
+  local cwd = vim.fn.fnamemodify(vim.fn.getcwd(), ':~')
+  vim.o.title = true
+  vim.o.titlestring = cwd:gsub('%%', '%%%%')
+end
+set_window_title()
+Config.new_autocmd('DirChanged', nil, set_window_title, 'Update window title')
+
 -- Define custom `vim.pack.add()` hook helper. See `:h vim.pack-events`.
 -- Example usage: see 'plugin/40_plugins.lua'.
 Config.on_packchanged = function(plugin_name, kinds, callback, desc)
