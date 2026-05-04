@@ -12,6 +12,17 @@
 local add = vim.pack.add
 local now_if_args, later = Config.now_if_args, Config.later
 
+-- File explorer ==============================================================
+
+-- Editable file explorer buffers, like vim-vinegar.
+-- Example usage:
+-- - `-` - open parent directory
+Config.now(function()
+  add({ 'https://github.com/stevearc/oil.nvim' })
+  require('oil').setup()
+  vim.keymap.set('n', '-', '<Cmd>Oil<CR>', { desc = 'Open parent directory' })
+end)
+
 -- Tree-sitter ================================================================
 
 -- Tree-sitter is a tool for fast incremental parsing. It converts text into
