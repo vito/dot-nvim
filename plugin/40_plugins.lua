@@ -300,6 +300,17 @@ later(function()
   require('gitlinker').setup()
 end)
 
+-- Git blame ===================================================================
+
+-- Fugitive-style git blame window.
+-- Example usage:
+-- - `<Leader>gb` - toggle blame view
+later(function()
+  add({ 'https://github.com/FabijanZulj/blame.nvim' })
+  require('blame').setup()
+  vim.keymap.set('n', '<Leader>gb', '<Cmd>BlameToggle<CR>', { desc = 'Toggle blame' })
+end)
+
 -- Git signs & inline blame ====================================================
 
 -- Sign column indicators for git hunks, inline blame, and hunk actions.
