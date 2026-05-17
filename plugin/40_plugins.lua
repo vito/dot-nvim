@@ -149,6 +149,19 @@ now_if_args(function()
   -- })
 end)
 
+-- Quickfix editing ===========================================================
+
+-- Make quickfix lists editable for search/replace workflows.
+-- Example usage:
+-- - `<Leader>er` - edit quickfix list with replacer
+later(function()
+  add({ 'https://github.com/gabrielpoca/replacer.nvim' })
+  require('replacer').setup()
+  vim.keymap.set('n', '<Leader>er', function()
+    require('replacer').run()
+  end, { desc = 'Edit quickfix list' })
+end)
+
 -- Formatting =================================================================
 
 -- Programs dedicated to text formatting (a.k.a. formatters) are very useful.
