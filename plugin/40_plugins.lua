@@ -29,25 +29,28 @@ end)
 -- a hierarchical structure (called tree) that can be used to implement advanced
 -- and/or more precise actions: syntax highlighting, textobjects, indent, etc.
 --
--- Tree-sitter support is built into Neovim (see `:h treesitter`). However, it
--- requires two extra pieces that don't come with Neovim directly:
--- - Language parsers: programs that convert text into trees. Some are built-in
---   (like for Lua), 'nvim-treesitter' provides many others.
---   NOTE: It requires third party software to build and install parsers.
---   See the link for more info in "Requirements" section of the MiniMax README.
--- - Query files: definitions of how to extract information from trees in
---   a useful manner (see `:h treesitter-query`). 'nvim-treesitter' also provides
---   these, while 'nvim-treesitter-textobjects' provides the ones for Neovim
---   textobjects (see `:h text-objects`, `:h MiniAi.gen_spec.treesitter()`).
+-- Tree-sitter support is built into Neovim (see `:h treesitter`). In Neovim
+-- 0.12+, highlighting is native: there is no `nvim-treesitter.configs.setup()`
+-- block here. This config uses 'nvim-treesitter' only as a parser/query package
+-- source and for its experimental indent expression.
+--
+-- Neovim itself ships several parsers (Lua, Markdown, Vimdoc, Query, etc.), but
+-- system packages can drift: a parser can be older/newer than the query files
+-- that Neovim loads. To avoid startup errors like "Invalid field name" in a
+-- query, this config prefers matching parsers+queries installed locally by
+-- 'nvim-treesitter' under `stdpath('data') .. '/site'`.
+--
+-- 'nvim-treesitter-textobjects' is kept for query files used by tree-sitter
+-- textobjects (see `:h text-objects`, `:h MiniAi.gen_spec.treesitter()`).
 --
 -- Add these plugins now if file (and not 'mini.starter') is shown after startup.
 --
 -- Troubleshooting:
 -- - Run `:checkhealth vim.treesitter nvim-treesitter` to see potential issues.
--- - In case of errors related to queries for Neovim bundled parsers (like `lua`,
---   `vimdoc`, `markdown`, etc.), manually install them via 'nvim-treesitter'
---   with `:TSInstall <language>`. Be sure to have necessary system dependencies
---   (see MiniMax README section for software requirements).
+-- - If you see a query/parser mismatch, force reinstall that language locally:
+--   `:TSInstall! <language>`.
+-- - Use `:TSUpdate` after updating 'nvim-treesitter' to update locally managed
+--   parsers. `:TSUpdate` does not update system/bundled parsers.
 now_if_args(function()
   -- Define hook to update tree-sitter parsers after plugin is updated
   local ts_update = function() vim.cmd('TSUpdate') end
@@ -58,11 +61,16 @@ now_if_args(function()
     'https://github.com/nvim-treesitter/nvim-treesitter-textobjects',
   })
 
-  -- Define languages which will have parsers installed and auto enabled
-  -- After changing this, restart Neovim once to install necessary parsers. Wait
-  -- for the installation to finish before opening a file for added language(s).
+  local ts = require('nvim-treesitter')
+  ts.setup({ install_dir = vim.fn.stdpath('data') .. '/site' })
+
+  -- Define languages which will have local parsers+queries installed and auto
+  -- enabled. After changing this, restart Neovim once to install necessary
+  -- parsers. Wait for installation to finish before opening a newly added
+  -- language if the first attempt shows a parser-not-found warning.
   local languages = {
-    -- These are already pre-installed with Neovim. Used as an example.
+    -- Bundled by Neovim, but installed locally too to keep parser/query pairs
+    -- in sync across system package updates.
     'lua',
     'vimdoc',
     'markdown',
@@ -102,11 +110,36 @@ now_if_args(function()
     'yaml',
     'zig',
   }
-  local isnt_installed = function(lang)
-    return #vim.api.nvim_get_runtime_file('parser/' .. lang .. '.*', false) == 0
+  -- Track only parsers/queries installed by 'nvim-treesitter'. Do not use
+  -- `nvim_get_runtime_file('parser/...')` here: that would treat system/bundled
+  -- parsers as good enough, even when they are out of sync with loaded queries.
+  local local_parsers, local_queries = {}, {}
+  for _, lang in ipairs(ts.get_installed('parsers')) do
+    local_parsers[lang] = true
   end
-  local to_install = vim.tbl_filter(isnt_installed, languages)
-  if #to_install > 0 then require('nvim-treesitter').install(to_install) end
+  for _, lang in ipairs(ts.get_installed('queries')) do
+    local_queries[lang] = true
+  end
+
+  local needs_local_install = function(lang)
+    return not (local_parsers[lang] and local_queries[lang])
+  end
+
+  local install_now, install_later = {}, {}
+  local blocks_startup = { lua = true, markdown = true, query = true, vimdoc = true }
+  for _, lang in ipairs(vim.tbl_filter(needs_local_install, languages)) do
+    table.insert(blocks_startup[lang] and install_now or install_later, lang)
+  end
+
+  -- Neovim's own ftplugins start tree-sitter for these languages, so make sure
+  -- their matching local parser/query pair exists before the initial BufReadPost.
+  if #install_now > 0 then
+    ts.install(install_now, { force = true }):wait(300000)
+  end
+
+  -- The rest can install asynchronously; if opened before installation finishes,
+  -- the guarded `vim.treesitter.start()` below will warn instead of aborting.
+  if #install_later > 0 then ts.install(install_later, { force = true }) end
 
   -- Enable tree-sitter after opening a file for a target language
   local filetypes = {}
@@ -116,7 +149,12 @@ now_if_args(function()
     end
   end
   local ts_start = function(ev)
-    vim.treesitter.start(ev.buf)
+    local ok, err = pcall(vim.treesitter.start, ev.buf)
+    if not ok then
+      local msg = ('Could not start tree-sitter for %s: %s'):format(vim.bo[ev.buf].filetype, err)
+      vim.notify(msg, vim.log.levels.WARN)
+      return
+    end
     vim.bo[ev.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
   end
   Config.new_autocmd('FileType', filetypes, ts_start, 'Start tree-sitter')
