@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "banana-blueberry-nvim-theme": {
+      "rev": "6ba7984ec32cad6d462b07b086adc0d149b85083",
+      "src": "https://github.com/Nick-Veale/banana-blueberry-nvim-theme"
+    },
     "blame.nvim": {
       "rev": "179da7aaacce7c52874af636255ede72dd6fe796",
       "src": "https://github.com/FabijanZulj/blame.nvim"

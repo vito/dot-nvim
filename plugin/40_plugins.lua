@@ -284,8 +284,11 @@ end)
 -- have full support of its highlight groups. Use if you don't like 'miniwinter'
 -- enabled in 'plugin/30_mini.lua' or other suggested 'mini.hues' based ones.
 Config.now(function()
-  add({ 'https://github.com/rose-pine/neovim' })
-  vim.cmd('color rose-pine')
+  add({
+    'https://github.com/rose-pine/neovim',
+    'https://github.com/Nick-Veale/banana-blueberry-nvim-theme',
+  })
+  vim.cmd('colorscheme banana-blueberry')
 end)
 
 -- Git permalinks ==============================================================
