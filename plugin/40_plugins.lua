@@ -321,12 +321,27 @@ end)
 -- Beautiful, usable, well maintained color schemes outside of 'mini.nvim' and
 -- have full support of its highlight groups. Use if you don't like 'miniwinter'
 -- enabled in 'plugin/30_mini.lua' or other suggested 'mini.hues' based ones.
+--
+-- 'f-person/auto-dark-mode.nvim' follows the OS appearance and switches the
+-- colorscheme automatically: 'banana-blueberry' when the OS is in dark mode and
+-- 'rose-pine-dawn' (a light variant from 'rose-pine/neovim') in light mode.
 Config.now(function()
   add({
     'https://github.com/rose-pine/neovim',
     'https://github.com/Nick-Veale/banana-blueberry-nvim-theme',
+    'https://github.com/f-person/auto-dark-mode.nvim',
   })
-  vim.cmd('colorscheme banana-blueberry')
+
+  require('auto-dark-mode').setup({
+    set_dark_mode = function()
+      vim.o.background = 'dark'
+      vim.cmd('colorscheme banana-blueberry')
+    end,
+    set_light_mode = function()
+      vim.o.background = 'light'
+      vim.cmd('colorscheme rose-pine-dawn')
+    end,
+  })
 end)
 
 -- Git permalinks ==============================================================
