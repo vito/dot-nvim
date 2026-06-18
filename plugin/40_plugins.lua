@@ -339,23 +339,22 @@ end)
 -- enabled in 'plugin/30_mini.lua' or other suggested 'mini.hues' based ones.
 --
 -- 'f-person/auto-dark-mode.nvim' follows the OS appearance and switches the
--- colorscheme automatically: 'banana-blueberry' when the OS is in dark mode and
--- 'rose-pine-dawn' (a light variant from 'rose-pine/neovim') in light mode.
+-- colorscheme automatically: 'inkstained-dark' when the OS is in dark mode and
+-- 'inkstained' in light mode.
 Config.now(function()
 	add({
-		"https://github.com/rose-pine/neovim",
-		"https://github.com/Nick-Veale/banana-blueberry-nvim-theme",
+		"https://github.com/vito/inkstained-vim",
 		"https://github.com/f-person/auto-dark-mode.nvim",
 	})
 
 	require("auto-dark-mode").setup({
 		set_dark_mode = function()
 			vim.o.background = "dark"
-			vim.cmd("colorscheme banana-blueberry")
+			vim.cmd("colorscheme inkstained-dark")
 		end,
 		set_light_mode = function()
 			vim.o.background = "light"
-			vim.cmd("colorscheme rose-pine-dawn")
+			vim.cmd("colorscheme inkstained")
 		end,
 	})
 end)
