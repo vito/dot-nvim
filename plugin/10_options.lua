@@ -23,7 +23,7 @@
 vim.g.mapleader = ',' -- Use `,` as <Leader> key
 
 vim.o.mouse       = 'a'            -- Enable mouse
-vim.o.mousescroll = 'ver:1,hor:6'  -- Customize mouse scroll
+vim.o.mousescroll = vim.g.neovide and 'ver:3,hor:6' or 'ver:1,hor:6' -- Customize mouse scroll
 vim.o.switchbuf   = 'usetab'       -- Use already opened buffers when switching
 vim.o.undofile    = true           -- Enable persistent undo
 
